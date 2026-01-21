@@ -33,6 +33,7 @@ public class MovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //TODO: grab and push reduces speed 20% per 100 mass
         float speed = walkSpeed;
         switch (moveState)
         {
