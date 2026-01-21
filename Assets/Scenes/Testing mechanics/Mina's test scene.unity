@@ -2417,7 +2417,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4405915070712860598}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.4023472, w: 0.9154871}
+  m_LocalRotation: {x: -0, y: -0, z: 0.40234724, w: 0.9154872}
   m_LocalPosition: {x: 0.2299498, y: 0.43010893, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3101,7 +3101,7 @@ Animator:
   m_GameObject: {fileID: 1289675564584823821}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c216d79ba9fa6424b89fd0d58278e33c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7cbaff4cac5cd8c479600ea24e1cfc35, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3295,7 +3295,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8823812592216999596}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.7799397, w: 0.6258546}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7799398, w: 0.6258547}
   m_LocalPosition: {x: 0.2826243, y: -0.14911604, z: 0}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4082,6 +4082,7 @@ GameObject:
   - component: {fileID: 7768764930077897306}
   - component: {fileID: 7768764930077897305}
   - component: {fileID: 7768764930077897304}
+  - component: {fileID: 7768764930077897307}
   m_Layer: 7
   m_Name: player
   m_TagString: Player
@@ -4113,7 +4114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a7da1f2b68be3b438ec02eda1c4e1da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovementController
-  walkSpeed: 10
+  walkSpeed: 400
   runSpeed: 15
   crouchWalkSpeed: 5
   crouchRunSpeed: 7.5
@@ -4146,6 +4147,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7768764930077897307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7768764930077897303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f4e60796646bf4f858a24d593581e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MovementAnimationController
+  animator: {fileID: 5083996064179830375}
 --- !u!212 &7774637961968277409
 SpriteRenderer:
   m_ObjectHideFlags: 0
