@@ -4116,9 +4116,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MovementController
   walkSpeed: 400
   runSpeed: 15
-  crouchWalkSpeed: 5
+  crouchWalkSpeed: 200
   crouchRunSpeed: 7.5
-  jumpPower: 200
+  jumpPower: 10
   runJumpPower: 7.5
 --- !u!50 &7768764930077897306
 Rigidbody2D:

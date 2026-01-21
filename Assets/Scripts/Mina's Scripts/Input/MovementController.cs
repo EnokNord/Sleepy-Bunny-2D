@@ -57,12 +57,9 @@ public class MovementController : MonoBehaviour
    public void SetWalkDirection(float newMoveDirection)
     {
         moveDirection = newMoveDirection;
-
         animationController.UpdateDirectionalFacing(moveDirection);
-        animationController.UpdateAnimationState("IsWalking", newMoveDirection == 0 ? false : true);
+        animationController.UpdateAnimationState("IsWalking", moveDirection == 0 ? false : true);
         UpdateMovementState();
-        
-
     }
     public void ToggleRunning(bool isNowRunning)
     {  

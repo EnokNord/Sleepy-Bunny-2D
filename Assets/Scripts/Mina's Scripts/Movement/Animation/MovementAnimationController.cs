@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class MovementAnimationController : MonoBehaviour
 {
-    MovementState animationState = MovementState.Idle;
+    //Todo: Fix this mess of a class
     [SerializeField]Animator animator;
     MovementController controller;
     Rigidbody2D rb;
