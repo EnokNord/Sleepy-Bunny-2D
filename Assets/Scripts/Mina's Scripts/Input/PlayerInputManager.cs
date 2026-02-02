@@ -5,7 +5,7 @@ using UnityEngine;
 using static Player.Movement.ForceAccumulate;
 using static UnityEngine.InputSystem.InputAction;
 [RequireComponent(typeof(MovementController))]
-public class PlayerInputManager : MonoBehaviour
+public class PlayerInputManager : MonoBehaviour, IDeathEvent
 {
     private PlayerInputController _inputControls;
     public PlayerInputController.PlayerActions playerMap => _inputControls.Player;
@@ -27,7 +27,6 @@ public class PlayerInputManager : MonoBehaviour
         playerMap.Run.canceled += StopRunning;
 
         playerMap.Jump.performed += DoJump;
-        // playerMap.Jump.canceled += OnJumpRelist;
 
         // TODO: Fix pushing and pulling objects
         //playerMap.PushOrPull.performed += OnPushOrPullPreset;
@@ -43,4 +42,11 @@ public class PlayerInputManager : MonoBehaviour
     private void DoJump(CallbackContext callbackContext) => playerMovementController.Jump();
     private void ToggleCrouching(CallbackContext callbackContext) => playerMovementController.ToggleCrouch(true);
     private void StopCrouching(CallbackContext callbackContext) => playerMovementController.ToggleCrouch(false);
+
+    public void TriggerDeathEvent()
+    {
+        //Todo: toggle reset
+        playerMap.Disable();
+        GetComponent<MovementAnimationController>().TriggerDeathAnimation();
+    }
 }

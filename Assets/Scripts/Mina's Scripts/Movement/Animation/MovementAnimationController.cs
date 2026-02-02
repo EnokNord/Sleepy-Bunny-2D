@@ -5,16 +5,15 @@ public class MovementAnimationController : MonoBehaviour
 {
     //Todo: Fix this mess of a class
     [SerializeField]Animator animator;
-    MovementController controller;
     Rigidbody2D rb;
+    bool alive = true;
     private void Awake()
     {
-        controller = GetComponent<MovementController>();
         rb = GetComponent<Rigidbody2D>();
     }
     private void FixedUpdate()
     {
-            if(rb.linearVelocityY != 0)
+            if(alive && rb.linearVelocityY != 0)
             {
                 
                 if (Global.GlobalFunctionsLibrary.IsGrounded(rb, 1.5f))
@@ -48,5 +47,10 @@ public class MovementAnimationController : MonoBehaviour
     public void UpdateAnimationState(string trigger)
     {
         animator.SetTrigger(trigger);
+    }
+    public void TriggerDeathAnimation()
+    {
+        animator.SetTrigger("Death");
+        alive = false;
     }
 }

@@ -12,7 +12,6 @@ public class MovementController : MonoBehaviour
 
     [Header("Crouch")]
     [SerializeField] private float crouchWalkSpeed = 5;
-    [SerializeField] private float crouchRunSpeed = 7.5f;
 
     [Header("Jump")]
     [SerializeField] private float jumpPower = 15;
@@ -24,11 +23,14 @@ public class MovementController : MonoBehaviour
     private float moveDirection = 0f;
     private bool isCrouching = false;
     private bool isRunning = false;
+
+    CapsuleCollider2D[] colliders;
     public MovementState Movestate { get { return moveState; } }
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         animationController = GetComponent<MovementAnimationController>();
+        colliders = GetComponents<CapsuleCollider2D>();
     }
 
     private void FixedUpdate()
@@ -40,7 +42,6 @@ public class MovementController : MonoBehaviour
             case MovementState.Idle: rigidBody.linearVelocityX = 0; return;
             case MovementState.Run: speed = runSpeed; break;
             case MovementState.CrouchWalk: speed = crouchWalkSpeed; break;
-            case MovementState.CrouchRun: speed = crouchRunSpeed; break;
             default:
                 break;
         }
@@ -64,24 +65,44 @@ public class MovementController : MonoBehaviour
     }
     public void ToggleRunning(bool isNowRunning)
     {  
-        //Todo: Undo crouch and start running anim
         isRunning = isNowRunning;
+        if (isRunning)
+        {
+            ToggleCrouch(false);
+            animationController.UpdateAnimationState("IsCrouching", isCrouching);
+        }
         UpdateMovementState();
     }
     public void ToggleCrouch(bool isNowCrouching)
     {
-        // Todo: Toggle model crouch both animation and hitbox 
+        // Todo: Toggle model crouch hitboxes
+
         isCrouching = isNowCrouching;
+        if (isCrouching)
+        {
+            ToggleRunning(false);
+            foreach (CapsuleCollider2D collider in colliders)
+            {
+                collider.size *= 0.75f;
+                collider.offset += Vector2.down * 0.5f;
+            }
+        }
+        else
+        {
+            foreach (CapsuleCollider2D collider in colliders) 
+            {
+                collider.size *= (1/0.75f);
+                collider.offset -= Vector2.down * 0.5f;
+            }
+        }
         animationController.UpdateAnimationState("IsCrouching", isCrouching);
         UpdateMovementState();
     }
     private void UpdateMovementState()
     {
-        // Todo: Make this better
-        if (moveState == MovementState.Idle) moveState = MovementState.Walk;
+        moveState = MovementState.Walk;
         if (isRunning) moveState = MovementState.Run;
         if (isCrouching) moveState = MovementState.CrouchWalk;
-        if (isRunning && isCrouching) moveState = MovementState.CrouchWalk;
         if (moveDirection == 0) moveState = MovementState.Idle;
     }
 

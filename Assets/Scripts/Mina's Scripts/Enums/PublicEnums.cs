@@ -5,6 +5,5 @@ public enum MovementState
     Idle,
     Walk,
     Run,
-    CrouchWalk,
-    CrouchRun,
+    CrouchWalk
 }
