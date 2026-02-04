@@ -7,6 +7,7 @@ namespace LevelFunctionsLibrary
     {
         public static void ResetCurrentLevel()
         {
+            Time.timeScale = 1.0f;
             Scene scene = SceneManager.GetActiveScene(); 
             SceneManager.LoadScene(scene.name);
         }
