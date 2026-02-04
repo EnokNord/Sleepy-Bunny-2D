@@ -5,16 +5,20 @@ using UnityEngine;
 using static Player.Movement.ForceAccumulate;
 using static UnityEngine.InputSystem.InputAction;
 [RequireComponent(typeof(MovementController))]
+[RequireComponent(typeof(ObjectMovingComponent))]
 public class PlayerInputManager : MonoBehaviour, IDeathEvent
 {
-    private PlayerInputController _inputControls;
-    public PlayerInputController.PlayerActions playerMap => _inputControls.Player;
+    public PlayerInputController.PlayerActions playerMap => inputControls.Player;
+    
     MovementController playerMovementController;
+    ObjectMovingComponent objectMovingComponent;
+    PlayerInputController inputControls;
 
     private void Awake()
     {
         playerMovementController = GetComponent<MovementController>();
-        _inputControls = new PlayerInputController();
+        objectMovingComponent = GetComponent<ObjectMovingComponent>();
+        inputControls = new PlayerInputController();
         playerMap.Enable();
         SetupInputBindings();
     }
@@ -27,13 +31,13 @@ public class PlayerInputManager : MonoBehaviour, IDeathEvent
         playerMap.Run.canceled += StopRunning;
 
         playerMap.Jump.performed += DoJump;
-
-        // TODO: Fix pushing and pulling objects
-        //playerMap.PushOrPull.performed += OnPushOrPullPreset;
-        //playerMap.PushOrPull.canceled += OnPushOrPullRelist;
+        playerMap.Jump.performed += ReleaseObject;
 
         playerMap.Crouch.performed += ToggleCrouching;
         playerMap.Crouch.canceled += StopCrouching;
+
+        playerMap.PushOrPull.performed += GrabObject;
+        playerMap.PushOrPull.canceled += ReleaseObject;
     }
     private void SetWalkDirection(CallbackContext callbackContext) => playerMovementController.SetWalkDirection(callbackContext.ReadValue<float>());
     private void StopWalk(CallbackContext callbackContext) => playerMovementController.SetWalkDirection(0);
@@ -42,6 +46,8 @@ public class PlayerInputManager : MonoBehaviour, IDeathEvent
     private void DoJump(CallbackContext callbackContext) => playerMovementController.Jump();
     private void ToggleCrouching(CallbackContext callbackContext) => playerMovementController.ToggleCrouch(true);
     private void StopCrouching(CallbackContext callbackContext) => playerMovementController.ToggleCrouch(false);
+    private void GrabObject(CallbackContext callbackContext) => objectMovingComponent.GrabObject();
+    private void ReleaseObject(CallbackContext callbackContext) => objectMovingComponent.ReleaseObject();
 
     public void TriggerDeathEvent()
     {

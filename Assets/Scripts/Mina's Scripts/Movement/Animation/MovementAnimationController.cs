@@ -3,7 +3,6 @@ using UnityEngine.EventSystems;
 
 public class MovementAnimationController : MonoBehaviour
 {
-    //Todo: Fix this mess of a class
     [SerializeField]Animator animator;
     Rigidbody2D rb;
     bool alive = true;

@@ -17,7 +17,16 @@ public class MovementController : MonoBehaviour
     [SerializeField] private float jumpPower = 15;
     [SerializeField] private float runJumpPower = 7.5f;
 
+    public float WalkSpeed { get { return walkSpeed; } }
+    public bool LockDirection { get; set; }
+    public MovementState CurrentState { get { return moveState; } }
+    public float CurrentWalkSpeed { get { return currentWalkSpeed; } set { if(value > 0) currentWalkSpeed = value; } }
+    public MovementAnimationController AnimationController { get { return animationController; } }
+    public float MoveDirection {  get { return moveDirection; } }
+   
+    
     Rigidbody2D rigidBody;
+    private float currentWalkSpeed;
     private MovementState moveState = MovementState.Idle;
     private MovementAnimationController animationController;
     private float moveDirection = 0f;
@@ -25,9 +34,9 @@ public class MovementController : MonoBehaviour
     private bool isRunning = false;
 
     CapsuleCollider2D[] colliders;
-    public MovementState Movestate { get { return moveState; } }
     private void Awake()
     {
+        CurrentWalkSpeed = WalkSpeed;
         rigidBody = GetComponent<Rigidbody2D>();
         animationController = GetComponent<MovementAnimationController>();
         colliders = GetComponents<CapsuleCollider2D>();
@@ -36,7 +45,7 @@ public class MovementController : MonoBehaviour
     private void FixedUpdate()
     {
         //TODO: grab and push reduces speed 20% per 100 mass
-        float speed = walkSpeed;
+        float speed = currentWalkSpeed;
         switch (moveState)
         {
             case MovementState.Idle: rigidBody.linearVelocityX = 0; return;
@@ -59,7 +68,7 @@ public class MovementController : MonoBehaviour
    public void SetWalkDirection(float newMoveDirection)
     {
         moveDirection = newMoveDirection;
-        animationController.UpdateDirectionalFacing(moveDirection);
+        if (!LockDirection) animationController.UpdateDirectionalFacing(moveDirection);
         animationController.UpdateAnimationState("IsWalking", moveDirection == 0 ? false : true);
         UpdateMovementState();
     }
@@ -75,8 +84,6 @@ public class MovementController : MonoBehaviour
     }
     public void ToggleCrouch(bool isNowCrouching)
     {
-        // Todo: Toggle model crouch hitboxes
-
         isCrouching = isNowCrouching;
         if (isCrouching)
         {
@@ -98,8 +105,9 @@ public class MovementController : MonoBehaviour
         animationController.UpdateAnimationState("IsCrouching", isCrouching);
         UpdateMovementState();
     }
-    private void UpdateMovementState()
+    public void UpdateMovementState()
     {
+        //if (LockState) return;
         moveState = MovementState.Walk;
         if (isRunning) moveState = MovementState.Run;
         if (isCrouching) moveState = MovementState.CrouchWalk;
