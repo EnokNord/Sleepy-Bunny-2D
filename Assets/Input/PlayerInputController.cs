@@ -147,6 +147,15 @@ namespace Input
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""e8c67d53-5254-40fe-bd95-9beb3cccf249"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -237,6 +246,28 @@ namespace Input
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9bd9005f-e312-4949-8ca9-6afc3e8158a1"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d7cfb1ff-d006-4629-94ba-2aa175076e19"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -251,6 +282,7 @@ namespace Input
             m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
             m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
             m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+            m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         }
 
         ~@PlayerInputController()
@@ -337,6 +369,7 @@ namespace Input
         private readonly InputAction m_Player_Run;
         private readonly InputAction m_Player_Crouch;
         private readonly InputAction m_Player_Interact;
+        private readonly InputAction m_Player_Pause;
         /// <summary>
         /// Provides access to input actions defined in input action map "Player".
         /// </summary>
@@ -372,6 +405,10 @@ namespace Input
             /// Provides access to the underlying input action "Player/Interact".
             /// </summary>
             public InputAction @Interact => m_Wrapper.m_Player_Interact;
+            /// <summary>
+            /// Provides access to the underlying input action "Player/Pause".
+            /// </summary>
+            public InputAction @Pause => m_Wrapper.m_Player_Pause;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -416,6 +453,9 @@ namespace Input
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
 
             /// <summary>
@@ -445,6 +485,9 @@ namespace Input
                 @Interact.started -= instance.OnInteract;
                 @Interact.performed -= instance.OnInteract;
                 @Interact.canceled -= instance.OnInteract;
+                @Pause.started -= instance.OnPause;
+                @Pause.performed -= instance.OnPause;
+                @Pause.canceled -= instance.OnPause;
             }
 
             /// <summary>
@@ -527,6 +570,13 @@ namespace Input
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnInteract(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Pause" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnPause(InputAction.CallbackContext context);
         }
     }
 }
