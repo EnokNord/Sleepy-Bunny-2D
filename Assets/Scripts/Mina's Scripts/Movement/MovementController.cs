@@ -35,30 +35,29 @@ public class MovementController : MonoBehaviour
     private Vector2 originalHitboxSize;
     private Vector2 originalHitboxOffset;
 
-    CapsuleCollider2D collider;
+    CapsuleCollider2D hitBoxCollider;
     private void Awake()
     {
         CurrentWalkSpeed = WalkSpeed;
         rigidBody = GetComponent<Rigidbody2D>();
         animationController = GetComponent<MovementAnimationController>();
-        collider = GetComponent<CapsuleCollider2D>();
-        originalHitboxSize = collider.size;
-        originalHitboxOffset = collider.offset;
+        hitBoxCollider = GetComponent<CapsuleCollider2D>();
+        originalHitboxSize = hitBoxCollider.size;
+        originalHitboxOffset = hitBoxCollider.offset;
     }
 
     private void FixedUpdate()
     {
-        //TODO: grab and push reduces speed 20% per 100 mass
         float speed = currentWalkSpeed;
         switch (moveState)
         {
-            case MovementState.Idle: rigidBody.linearVelocityX = 0; return;
+            case MovementState.Idle: return;
             case MovementState.Run: speed = runSpeed; break;
             case MovementState.CrouchWalk: speed = crouchWalkSpeed; break;
             default:
                 break;
         }
-        rigidBody.linearVelocityX = moveDirection * speed * Time.fixedDeltaTime;
+        transform.position += Vector3.right * (moveDirection * speed * Time.fixedDeltaTime);
     }
     public void Jump()
     {
@@ -92,20 +91,19 @@ public class MovementController : MonoBehaviour
         if (isCrouching)
         {
             ToggleRunning(false);
-                collider.size = (originalHitboxSize * 0.75f);
-                collider.offset = (originalHitboxOffset + Vector2.down * 0.5f);
+                hitBoxCollider.size = (originalHitboxSize * 0.75f);
+                hitBoxCollider.offset = (originalHitboxOffset + Vector2.down * 0.5f);
         }
         else
         {
-                collider.size =  originalHitboxSize;
-                collider.offset = originalHitboxOffset;
+                hitBoxCollider.size =  originalHitboxSize;
+                hitBoxCollider.offset = originalHitboxOffset;
         }
         animationController.UpdateAnimationState("IsCrouching", isCrouching);
         UpdateMovementState();
     }
     public void UpdateMovementState()
     {
-        //if (LockState) return;
         moveState = MovementState.Walk;
         if (isRunning) moveState = MovementState.Run;
         if (isCrouching) moveState = MovementState.CrouchWalk;
