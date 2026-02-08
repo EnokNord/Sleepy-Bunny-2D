@@ -32,14 +32,18 @@ public class MovementController : MonoBehaviour
     private float moveDirection = 0f;
     private bool isCrouching = false;
     private bool isRunning = false;
+    private Vector2 originalHitboxSize;
+    private Vector2 originalHitboxOffset;
 
-    CapsuleCollider2D[] colliders;
+    CapsuleCollider2D collider;
     private void Awake()
     {
         CurrentWalkSpeed = WalkSpeed;
         rigidBody = GetComponent<Rigidbody2D>();
         animationController = GetComponent<MovementAnimationController>();
-        colliders = GetComponents<CapsuleCollider2D>();
+        collider = GetComponent<CapsuleCollider2D>();
+        originalHitboxSize = collider.size;
+        originalHitboxOffset = collider.offset;
     }
 
     private void FixedUpdate()
@@ -88,19 +92,13 @@ public class MovementController : MonoBehaviour
         if (isCrouching)
         {
             ToggleRunning(false);
-            foreach (CapsuleCollider2D collider in colliders)
-            {
-                collider.size *= 0.75f;
-                collider.offset += Vector2.down * 0.5f;
-            }
+                collider.size = (originalHitboxSize * 0.75f);
+                collider.offset = (originalHitboxOffset + Vector2.down * 0.5f);
         }
         else
         {
-            foreach (CapsuleCollider2D collider in colliders) 
-            {
-                collider.size *= (1/0.75f);
-                collider.offset -= Vector2.down * 0.5f;
-            }
+                collider.size =  originalHitboxSize;
+                collider.offset = originalHitboxOffset;
         }
         animationController.UpdateAnimationState("IsCrouching", isCrouching);
         UpdateMovementState();
