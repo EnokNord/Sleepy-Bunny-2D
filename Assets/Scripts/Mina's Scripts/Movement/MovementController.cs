@@ -32,29 +32,32 @@ public class MovementController : MonoBehaviour
     private float moveDirection = 0f;
     private bool isCrouching = false;
     private bool isRunning = false;
+    private Vector2 originalHitboxSize;
+    private Vector2 originalHitboxOffset;
 
-    CapsuleCollider2D[] colliders;
+    CapsuleCollider2D hitBoxCollider;
     private void Awake()
     {
         CurrentWalkSpeed = WalkSpeed;
         rigidBody = GetComponent<Rigidbody2D>();
         animationController = GetComponent<MovementAnimationController>();
-        colliders = GetComponents<CapsuleCollider2D>();
+        hitBoxCollider = GetComponent<CapsuleCollider2D>();
+        originalHitboxSize = hitBoxCollider.size;
+        originalHitboxOffset = hitBoxCollider.offset;
     }
 
     private void FixedUpdate()
     {
-        //TODO: grab and push reduces speed 20% per 100 mass
         float speed = currentWalkSpeed;
         switch (moveState)
         {
-            case MovementState.Idle: rigidBody.linearVelocityX = 0; return;
+            case MovementState.Idle: return;
             case MovementState.Run: speed = runSpeed; break;
             case MovementState.CrouchWalk: speed = crouchWalkSpeed; break;
             default:
                 break;
         }
-        rigidBody.linearVelocityX = moveDirection * speed * Time.fixedDeltaTime;
+        transform.position += Vector3.right * (moveDirection * speed * Time.fixedDeltaTime);
     }
     public void Jump()
     {
@@ -88,26 +91,19 @@ public class MovementController : MonoBehaviour
         if (isCrouching)
         {
             ToggleRunning(false);
-            foreach (CapsuleCollider2D collider in colliders)
-            {
-                collider.size *= 0.75f;
-                collider.offset += Vector2.down * 0.5f;
-            }
+                hitBoxCollider.size = (originalHitboxSize * 0.75f);
+                hitBoxCollider.offset = (originalHitboxOffset + Vector2.down * 0.5f);
         }
         else
         {
-            foreach (CapsuleCollider2D collider in colliders) 
-            {
-                collider.size *= (1/0.75f);
-                collider.offset -= Vector2.down * 0.5f;
-            }
+                hitBoxCollider.size =  originalHitboxSize;
+                hitBoxCollider.offset = originalHitboxOffset;
         }
         animationController.UpdateAnimationState("IsCrouching", isCrouching);
         UpdateMovementState();
     }
     public void UpdateMovementState()
     {
-        //if (LockState) return;
         moveState = MovementState.Walk;
         if (isRunning) moveState = MovementState.Run;
         if (isCrouching) moveState = MovementState.CrouchWalk;
