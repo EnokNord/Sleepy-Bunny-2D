@@ -75,7 +75,7 @@ public class MovementController : MonoBehaviour
     public void ToggleRunning(bool isNowRunning)
     {  
         isRunning = isNowRunning;
-        if (isRunning)
+        if (isRunning && isCrouching)
         {
             ToggleCrouch(false);
             animationController.UpdateAnimationState("IsCrouching", isCrouching);
