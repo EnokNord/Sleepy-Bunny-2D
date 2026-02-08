@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 28958330}
   - component: {fileID: 28958329}
   - component: {fileID: 28958328}
+  - component: {fileID: 28958331}
   m_Layer: 0
   m_Name: box spawner
   m_TagString: Untagged
@@ -149,8 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b808eb65116bf0a42936ee533253aa30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoxSpawner
-  timerLenght: 4
-  PrefabtoInstatiate: {fileID: 6118013124900638494, guid: 04986c1e2977e8942aa046edfe026ad1, type: 3}
 --- !u!212 &28958329
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -224,6 +223,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &28958331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28958327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9627a694e6e25d449dd2ff721be7a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSpawner
+  timerLength: 3.5
+  PrefabToSpawn: {fileID: 6118013124900638494, guid: 04986c1e2977e8942aa046edfe026ad1, type: 3}
 --- !u!1001 &135653593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1183,7 +1196,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1982085207}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7317441aa3a55414f91ad8942dd85d1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6eb1c5a12a10a1549a5d75af8614895c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TheDestroyer
 --- !u!61 &1982085209

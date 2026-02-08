@@ -1418,8 +1418,8 @@ MonoBehaviour:
   walkSpeed: 400
   runSpeed: 600
   crouchWalkSpeed: 200
-  jumpPower: 12
-  runJumpPower: 10
+  jumpPower: 11
+  runJumpPower: 8
 --- !u!114 &3741439219054386337
 MonoBehaviour:
   m_ObjectHideFlags: 0
