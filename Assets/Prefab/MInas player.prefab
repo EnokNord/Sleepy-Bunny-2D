@@ -1388,7 +1388,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 500
+  m_Mass: 25
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -1418,8 +1418,8 @@ MonoBehaviour:
   walkSpeed: 400
   runSpeed: 600
   crouchWalkSpeed: 200
-  jumpPower: 10
-  runJumpPower: 15
+  jumpPower: 13
+  runJumpPower: 10
 --- !u!114 &3741439219054386337
 MonoBehaviour:
   m_ObjectHideFlags: 0
