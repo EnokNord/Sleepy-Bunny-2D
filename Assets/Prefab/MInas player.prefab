@@ -1418,7 +1418,7 @@ MonoBehaviour:
   walkSpeed: 400
   runSpeed: 600
   crouchWalkSpeed: 200
-  jumpPower: 13
+  jumpPower: 12
   runJumpPower: 10
 --- !u!114 &3741439219054386337
 MonoBehaviour:
