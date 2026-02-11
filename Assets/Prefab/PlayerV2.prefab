@@ -1316,7 +1316,7 @@ GameObject:
   - component: {fileID: 5727871360423219487}
   - component: {fileID: 1187185070316274164}
   m_Layer: 7
-  m_Name: MInas player
+  m_Name: PlayerV2
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

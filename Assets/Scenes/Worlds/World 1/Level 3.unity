@@ -9480,7 +9480,7 @@ PrefabInstance:
       objectReference: {fileID: 2000417901}
     - target: {fileID: 4106330609389376741, guid: 8def76f39a7cd3041b26bd8389dc878c, type: 3}
       propertyPath: m_Name
-      value: MInas player
+      value: PlayerV2
       objectReference: {fileID: 0}
     - target: {fileID: 7005742529849084950, guid: 8def76f39a7cd3041b26bd8389dc878c, type: 3}
       propertyPath: m_LocalPosition.x
