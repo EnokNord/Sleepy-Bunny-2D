@@ -23,6 +23,26 @@ public class PlayerInputManager : MonoBehaviour, IDeathEvent
         playerMap.Enable();
         SetupInputBindings();
     }
+    private void OnDisable()
+    {
+        playerMap.Walk.performed -= SetWalkDirection;
+        playerMap.Walk.canceled -= StopWalk;
+
+        playerMap.Run.performed -= ToggleRunning;
+        playerMap.Run.canceled -= StopRunning;
+
+        playerMap.Jump.performed -= DoJump;
+        playerMap.Jump.performed -= ReleaseObject;
+
+        playerMap.Crouch.performed -= ToggleCrouching;
+        playerMap.Crouch.canceled -= StopCrouching;
+
+        playerMap.PushOrPull.performed -= GrabObject;
+        playerMap.PushOrPull.canceled -= ReleaseObject;
+
+        playerMap.Pause.performed -= TogglePauseMenu;
+        playerMap.Disable();
+    }
     private void SetupInputBindings()
     {
         playerMap.Walk.performed += SetWalkDirection;
