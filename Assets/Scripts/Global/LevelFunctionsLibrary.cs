@@ -14,11 +14,30 @@ namespace LevelFunctionsLibrary
 
         public static void LoadNewLevel(string scene)
         {
+            if (SceneUtility.GetBuildIndexByScenePath(scene) < 0)
+            {
+                Debug.LogError("Tried to load scene by name that doesnt exist!");
+                return;
+            }
             Time.timeScale = 1;
             SceneManager.LoadScene(scene);
         }
+        public static void ToggleGamePause(bool paused)
+        {
+            if (paused) Time.timeScale = 0;
+            else Time.timeScale = 1;
+        }
+        public static void QuitGame()
+        {
+            Application.Quit();
+        }
         public static void LoadNewLevel(int scene)
         {
+            if (SceneManager.GetSceneByBuildIndex(scene) == null)
+            {
+                Debug.LogError("Tried to load scene by index that doesnt exist!");
+                return;
+            }
             Time.timeScale = 1;
             SceneManager.LoadScene(scene);
         }

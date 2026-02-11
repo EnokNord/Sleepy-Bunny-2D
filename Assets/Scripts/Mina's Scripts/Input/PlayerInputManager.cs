@@ -78,12 +78,12 @@ public class PlayerInputManager : MonoBehaviour, IDeathEvent
         if(pauseMenuCanvas.activeSelf)
         {
             pauseMenuCanvas.SetActive(false);
-            Time.timeScale = 1;
+            LevelFunctionsLibrary.LevelFunctions.ToggleGamePause(false);
         }
         else
         {
             pauseMenuCanvas.SetActive(true);
-            Time.timeScale = 0;
+            LevelFunctionsLibrary.LevelFunctions.ToggleGamePause(true);
         }
     }
 
