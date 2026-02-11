@@ -9,6 +9,7 @@ using static UnityEngine.InputSystem.InputAction;
 public class PlayerInputManager : MonoBehaviour, IDeathEvent
 {
     public PlayerInputController.PlayerActions playerMap => inputControls.Player;
+    [SerializeField] GameObject pauseMenuCanvas;
     
     MovementController playerMovementController;
     ObjectMovingComponent objectMovingComponent;
@@ -21,6 +22,26 @@ public class PlayerInputManager : MonoBehaviour, IDeathEvent
         inputControls = new PlayerInputController();
         playerMap.Enable();
         SetupInputBindings();
+    }
+    private void OnDisable()
+    {
+        playerMap.Walk.performed -= SetWalkDirection;
+        playerMap.Walk.canceled -= StopWalk;
+
+        playerMap.Run.performed -= ToggleRunning;
+        playerMap.Run.canceled -= StopRunning;
+
+        playerMap.Jump.performed -= DoJump;
+        playerMap.Jump.performed -= ReleaseObject;
+
+        playerMap.Crouch.performed -= ToggleCrouching;
+        playerMap.Crouch.canceled -= StopCrouching;
+
+        playerMap.PushOrPull.performed -= GrabObject;
+        playerMap.PushOrPull.canceled -= ReleaseObject;
+
+        playerMap.Pause.performed -= TogglePauseMenu;
+        playerMap.Disable();
     }
     private void SetupInputBindings()
     {
@@ -38,6 +59,8 @@ public class PlayerInputManager : MonoBehaviour, IDeathEvent
 
         playerMap.PushOrPull.performed += GrabObject;
         playerMap.PushOrPull.canceled += ReleaseObject;
+
+        playerMap.Pause.performed += TogglePauseMenu;
     }
     private void SetWalkDirection(CallbackContext callbackContext) => playerMovementController.SetWalkDirection(callbackContext.ReadValue<float>());
     private void StopWalk(CallbackContext callbackContext) => playerMovementController.SetWalkDirection(0);
@@ -48,6 +71,21 @@ public class PlayerInputManager : MonoBehaviour, IDeathEvent
     private void StopCrouching(CallbackContext callbackContext) => playerMovementController.ToggleCrouch(false);
     private void GrabObject(CallbackContext callbackContext) => objectMovingComponent.GrabObject();
     private void ReleaseObject(CallbackContext callbackContext) => objectMovingComponent.ReleaseObject();
+
+    public void TogglePauseMenu(CallbackContext callbackContext)
+    {
+        if (pauseMenuCanvas == null) return;
+        if(pauseMenuCanvas.activeSelf)
+        {
+            pauseMenuCanvas.SetActive(false);
+            LevelFunctionsLibrary.LevelFunctions.ToggleGamePause(false);
+        }
+        else
+        {
+            pauseMenuCanvas.SetActive(true);
+            LevelFunctionsLibrary.LevelFunctions.ToggleGamePause(true);
+        }
+    }
 
     public void TriggerDeathEvent()
     {
