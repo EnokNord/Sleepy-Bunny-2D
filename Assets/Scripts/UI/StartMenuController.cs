@@ -9,6 +9,6 @@ public class StartMenuController : MonoBehaviour
     }
     public void StartNewGame()
     {
-        SceneManager.LoadScene(1);
+       LevelFunctionsLibrary.LevelFunctions.LoadNewLevel(1);
     }
 }

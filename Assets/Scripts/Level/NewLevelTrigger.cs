@@ -1,8 +1,7 @@
 using UnityEngine;
 using static Global.GlobalVariablesLibrary;
 
-namespace LevelFunctionsLibrary
-{
+
     [RequireComponent(typeof(BoxCollider2D))]
     public class NewLevelTrigger : MonoBehaviour
     {
@@ -16,7 +15,6 @@ namespace LevelFunctionsLibrary
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.layer != PlayerLayer) return;
-            LevelFunctions.LoadNextLevel();
+            LevelFunctionsLibrary.LevelFunctions.LoadNextLevel();
         }
     }
-}

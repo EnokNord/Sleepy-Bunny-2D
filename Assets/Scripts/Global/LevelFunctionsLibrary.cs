@@ -11,11 +11,20 @@ namespace LevelFunctionsLibrary
             Scene scene = SceneManager.GetActiveScene(); 
             SceneManager.LoadScene(scene.name);
         }
-        
-        public static void LoadNewLevel(string scene) => SceneManager.LoadScene(scene);
-        public static void LoadNewLevel(int scene) => SceneManager.LoadScene(scene);
+
+        public static void LoadNewLevel(string scene)
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(scene);
+        }
+        public static void LoadNewLevel(int scene)
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(scene);
+        }
         public static void LoadNextLevel()
         {
+            Time.timeScale = 1;
             int index = SceneManager.GetActiveScene().buildIndex + 1;
             if (index > SceneManager.sceneCount - 1) SceneManager.LoadScene(0);
             SceneManager.LoadScene(index);

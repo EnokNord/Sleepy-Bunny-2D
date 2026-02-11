@@ -14,7 +14,6 @@ public class PauseMenuController : MonoBehaviour
     }
     public void LoadStartMenu()
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(0);
+        LevelFunctionsLibrary.LevelFunctions.LoadNewLevel(0);
     }
 }
