@@ -16,6 +16,7 @@ public class MovementController : MonoBehaviour
     [Header("Jump")]
     [SerializeField] private float jumpPower = 15;
     [SerializeField] private float runJumpPower = 7.5f;
+    [SerializeField] private float horizontalRunJumpPower = 7.5f;
 
     public float WalkSpeed { get { return walkSpeed; } }
     public bool LockDirection { get; set; }
@@ -57,13 +58,21 @@ public class MovementController : MonoBehaviour
             default:
                 break;
         }
-        transform.position += Vector3.right * (moveDirection * speed * Time.fixedDeltaTime);
+        if(Mathf.Abs(rigidBody.linearVelocityX) < 10)
+        {
+            transform.position += Vector3.right * (moveDirection * speed * Time.fixedDeltaTime);
+        }
+        
     }
     public void Jump()
     {
         if (Global.GlobalFunctionsLibrary.IsGrounded(rigidBody))
         {
-            if(isRunning) rigidBody.linearVelocityY = runJumpPower;
+            if (isRunning)
+            {
+                rigidBody.linearVelocityY = runJumpPower;
+                rigidBody.linearVelocityX += runJumpPower * moveDirection;
+            }
             else rigidBody.linearVelocityY = jumpPower;
             animationController.UpdateAnimationState("Jump");
         }
