@@ -2,6 +2,7 @@ using System.Drawing;
 using UnityEngine;
 using UnityEngine.Device;
 
+
 /*
 How to get this code to work.
 For this code to work you need to add a few things to the player in the unity editior
@@ -17,8 +18,8 @@ Lastly set a peralex scrolling value. I have set it to be 0.5f at default. but y
 public class RightParalex : MonoBehaviour
 {
     //starting values for the paralex scroling, used to ancer them to a place in the game world
-    private float startposX;
-    private float startposY;
+   private float startposX;
+   private float startposY;
 
     //The player
     private GameObject Player;
@@ -26,8 +27,8 @@ public class RightParalex : MonoBehaviour
     public GameObject Self;
 
     //Two special objects placed on the player. There becouse I coldn't find a way to grab the screens edges in world transform
-    private GameObject Top;
-    private GameObject Bottom;
+    [SerializeField] GameObject Top;
+     [SerializeField] GameObject Bottom;
 
     //Imuages and its size
     private Renderer Render;
@@ -48,13 +49,13 @@ public class RightParalex : MonoBehaviour
     public float paralexEffect = 0.5f;
    
 
-  
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GameObject player = GameObject.Find("player");
+        GameObject player = GameObject.Find("PlayerV2");
         GameObject top = GameObject.Find("CamraTop");
         GameObject bottom = GameObject.Find("CameraBottom");
+
 
         Render = Self.GetComponent<Renderer>();
 
@@ -62,13 +63,17 @@ public class RightParalex : MonoBehaviour
         Top = top;
         Bottom = bottom;
         Player = player;
-        
-        
 
+        Vector3 TipDimensions = Camera.main.ScreenToWorldPoint(new Vector3(UnityEngine.Screen.width, UnityEngine.Screen.height, 0));
+        Vector3 BottomDimensions = Camera.main.ScreenToWorldPoint(Vector3.zero);
+
+        Top.transform.position = TipDimensions;
+        Bottom.transform.position = BottomDimensions;
 
         startposX = transform.position.x;
         startposY = transform.position.y;
 
+       
     }
 
     
@@ -81,6 +86,7 @@ public class RightParalex : MonoBehaviour
 
         // X should allways be modified to keep the foreground in position
         transform.position = new Vector3(startposX + distx, transform.position.y, 0);
+
 
         if (neither)
         {
@@ -97,7 +103,7 @@ public class RightParalex : MonoBehaviour
             //Checks if the threshold for the image is broken. The 0.5f is needed for a later point
             if (Top.transform.position.y + 0.5f > Render.bounds.max.y)
             {
-                //Debug.Log("Too low");
+                
 
                 //if the foreground just now reached its treshold then trigger this code.
                 if (!Stuck)
@@ -140,7 +146,7 @@ public class RightParalex : MonoBehaviour
 
             if (Bottom.transform.position.y - 0.5f < Render.bounds.min.y)
             {
-                //Debug.Log("Too high");
+                
                 
                 if (!Stuck)
                 {
