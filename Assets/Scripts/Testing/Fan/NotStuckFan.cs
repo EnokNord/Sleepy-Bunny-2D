@@ -26,7 +26,7 @@ public class NotStuckFan : MonoBehaviour
     private void Start()
     {
         OnOff = onOff;
-        GameObject player = GameObject.Find("player");
+        GameObject player = GameObject.Find("PlayerV2");
         PlayerRigidbody = player.GetComponent<Rigidbody2D>();
         Debug.Log(player);
     }
@@ -63,7 +63,7 @@ public class NotStuckFan : MonoBehaviour
                 Debug.DrawRay(transform.position, Vector2.up * fanRange, Color.green);
                 break;
             case Directions.Down:
-                if (Physics2D.Raycast(transform.position, Vector2.down, fanRange, LayerMask.GetMask("player")))
+                if (Physics2D.Raycast(transform.position, Vector2.down, fanRange, LayerMask.GetMask("Player")))
                 {
                     PlayerRigidbody.AddForce(-transform.up * fanPower);
                 }
@@ -71,7 +71,7 @@ public class NotStuckFan : MonoBehaviour
 
                 break;
             case Directions.Left:
-                if (Physics2D.Raycast(transform.position, Vector2.left, fanRange, LayerMask.GetMask("player")))
+                if (Physics2D.Raycast(transform.position, Vector2.left, fanRange, LayerMask.GetMask("Player")))
                 {
                     PlayerRigidbody.AddForce(-transform.right * fanPower);
                 }
@@ -79,7 +79,7 @@ public class NotStuckFan : MonoBehaviour
 
                 break;
             case Directions.Right:
-                if (Physics2D.Raycast(transform.position, Vector2.right, fanRange, LayerMask.GetMask("player")))
+                if (Physics2D.Raycast(transform.position, Vector2.right, fanRange, LayerMask.GetMask("Player")))
                 {
                     PlayerRigidbody.AddForce(transform.right * fanPower);
                 }
