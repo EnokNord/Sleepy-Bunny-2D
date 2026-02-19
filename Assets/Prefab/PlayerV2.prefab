@@ -1315,6 +1315,7 @@ GameObject:
   - component: {fileID: 3741439219054386337}
   - component: {fileID: 5727871360423219487}
   - component: {fileID: 1187185070316274164}
+  - component: {fileID: 8679215112775062517}
   m_Layer: 7
   m_Name: PlayerV2
   m_TagString: Player
@@ -1459,6 +1460,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1765958bdfd4ebb4ab1624af2d9f86f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectMovingComponent
+--- !u!114 &8679215112775062517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4106330609389376741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3841bc4bb26f345b84b7a3f12ce93d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Scoresystem
+  OnBigCollection:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: BigScoreText, Assembly-CSharp
+        m_MethodName: UpdateBigscoreText
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnSmallCollection:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SamllScoreText, Assembly-CSharp
+        m_MethodName: UpdateSmallscoreText
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4145599745968323594
 GameObject:
   m_ObjectHideFlags: 0
@@ -2683,7 +2726,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.509434, g: 0.23541647, b: 0.14177644, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
