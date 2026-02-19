@@ -1,4 +1,7 @@
+using System.Numerics;
 using System.Runtime.CompilerServices;
+using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
@@ -11,7 +14,10 @@ public class NotStuckFan : MonoBehaviour
         Left,
         Right
     }
-   // private const int PlayerLayer = 7;
+    // The Layer the payer is on. Used for a hit check
+    private const int PlayerLayer = 7;
+
+    private GameObject Pushing;
 
     [SerializeField] private Directions fanDirection;
     [SerializeField] private float fanPower;
@@ -19,6 +25,11 @@ public class NotStuckFan : MonoBehaviour
     [SerializeField] private bool onOff = true;
     //public bool OnOff { get; private set; }
 
+    private bool up = false;
+    private bool down = false;
+    private bool left = false;
+    private bool right = false;
+    
     public bool OnOff = true;
 
     private Rigidbody2D PlayerRigidbody;
@@ -26,9 +37,7 @@ public class NotStuckFan : MonoBehaviour
     private void Start()
     {
         OnOff = onOff;
-        GameObject player = GameObject.Find("PlayerV2");
-        PlayerRigidbody = player.GetComponent<Rigidbody2D>();
-        Debug.Log(player);
+
     }
     //brakes the code
     /*
@@ -47,6 +56,7 @@ public class NotStuckFan : MonoBehaviour
         PlayerRigidbody = null;
     }
     */
+    /*
     private void FixedUpdate()
     {
 
@@ -60,10 +70,14 @@ public class NotStuckFan : MonoBehaviour
                 {
                     PlayerRigidbody.AddForce(transform.up * fanPower);
                 }
+                else if (Physics2D.Raycast(transform.position, Vector2.up, fanRange, GameObject.name("")))
+                {
+
+                }
                 Debug.DrawRay(transform.position, Vector2.up * fanRange, Color.green);
                 break;
             case Directions.Down:
-                if (Physics2D.Raycast(transform.position, Vector2.down, fanRange, LayerMask.GetMask("Player")))
+                if (Physics2D.Raycast(transform.position, vector2.up, fanrange (hit && hit.name.contains("name"))
                 {
                     PlayerRigidbody.AddForce(-transform.up * fanPower);
                 }
@@ -87,6 +101,51 @@ public class NotStuckFan : MonoBehaviour
 
                 break;
         }
+    }
+    */
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.gameObject.layer != PlayerLayer && other.gameObject.name != "box_small") return;
+
+        PlayerRigidbody = other.gameObject.GetComponent<Rigidbody2D>();
+
+        Debug.Log(PlayerRigidbody);
+
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.layer != PlayerLayer && other.gameObject.name != "box_small") return;
+
+        PlayerRigidbody = null; 
+    }
+
+    private void FixedUpdate()
+    {
+        if (PlayerRigidbody == null) return;
+
+        switch (fanDirection)
+        {
+            case Directions.Up:
+                PlayerRigidbody.AddForce(transform.up * fanPower);
+                
+                break;
+
+            case Directions.Down:
+                PlayerRigidbody.AddForce(-transform.up * fanPower);
+                break;
+
+            case Directions.Left:
+                PlayerRigidbody.AddForce(-transform.right * fanPower);
+                break;
+
+            case Directions.Right:
+                PlayerRigidbody.AddForce(transform.right * fanPower);
+                break;
+        }
+
     }
 
     //When press button call this method 
