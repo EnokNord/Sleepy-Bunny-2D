@@ -1,0 +1,1885 @@
+fileFormatVersion: 2
+guid: 83aacee89dc83c544b4b76b9c556f49c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6541211811042207379
+    second: Street_moonstars_0
+  - first:
+      213: 7049662152225616095
+    second: Street_moonstars_1
+  - first:
+      213: -5923297009284373059
+    second: Street_moonstars_2
+  - first:
+      213: 556782020761765948
+    second: Street_moonstars_3
+  - first:
+      213: -210247612050269902
+    second: Street_moonstars_4
+  - first:
+      213: -5044981781925053775
+    second: Street_moonstars_5
+  - first:
+      213: 619893625283138417
+    second: Street_moonstars_6
+  - first:
+      213: -712300924637804115
+    second: Street_moonstars_7
+  - first:
+      213: 6626341313445241974
+    second: Street_moonstars_8
+  - first:
+      213: -8161194410086997491
+    second: Street_moonstars_9
+  - first:
+      213: 2872686519084995728
+    second: Street_moonstars_10
+  - first:
+      213: -7972852704413228195
+    second: Street_moonstars_11
+  - first:
+      213: -1763226444149825615
+    second: Street_moonstars_12
+  - first:
+      213: 7118092136201890687
+    second: Street_moonstars_13
+  - first:
+      213: -9037288308238818306
+    second: Street_moonstars_14
+  - first:
+      213: 3151306600658973079
+    second: Street_moonstars_15
+  - first:
+      213: 3821355586916198261
+    second: Street_moonstars_16
+  - first:
+      213: -3231578204712348519
+    second: Street_moonstars_17
+  - first:
+      213: -166385343460205314
+    second: Street_moonstars_18
+  - first:
+      213: 8604626958766013258
+    second: Street_moonstars_19
+  - first:
+      213: 7180440029538954777
+    second: Street_moonstars_20
+  - first:
+      213: 5003882684334305585
+    second: Street_moonstars_21
+  - first:
+      213: -7620334209295382662
+    second: Street_moonstars_22
+  - first:
+      213: 6440424904153487980
+    second: Street_moonstars_23
+  - first:
+      213: -2151776387584608648
+    second: Street_moonstars_24
+  - first:
+      213: 1475114941768627482
+    second: Street_moonstars_25
+  - first:
+      213: -7805308486782130591
+    second: Street_moonstars_26
+  - first:
+      213: 5748612957098909509
+    second: Street_moonstars_27
+  - first:
+      213: -36713525244960650
+    second: Street_moonstars_28
+  - first:
+      213: 4315296933740361196
+    second: Street_moonstars_29
+  - first:
+      213: -2604633428371857449
+    second: Street_moonstars_30
+  - first:
+      213: -4831447753930994780
+    second: Street_moonstars_31
+  - first:
+      213: 4671939859228951241
+    second: Street_moonstars_32
+  - first:
+      213: 1208575156343156588
+    second: Street_moonstars_33
+  - first:
+      213: 5725414429302246889
+    second: Street_moonstars_34
+  - first:
+      213: 1497366554224829336
+    second: Street_moonstars_35
+  - first:
+      213: 2523592215435019265
+    second: Street_moonstars_36
+  - first:
+      213: 5534562823544645378
+    second: Street_moonstars_37
+  - first:
+      213: 3735372455030803048
+    second: Street_moonstars_38
+  - first:
+      213: 4480321095825133462
+    second: Street_moonstars_39
+  - first:
+      213: -7378476666393880683
+    second: Street_moonstars_40
+  - first:
+      213: 2149949455568658467
+    second: Street_moonstars_41
+  - first:
+      213: 2628097194648268757
+    second: Street_moonstars_42
+  - first:
+      213: 8221499182940422057
+    second: Street_moonstars_43
+  - first:
+      213: -6201972719676712040
+    second: Street_moonstars_44
+  - first:
+      213: 673075569676707431
+    second: Street_moonstars_45
+  - first:
+      213: -4619281890502285544
+    second: Street_moonstars_46
+  - first:
+      213: 1991437830596716941
+    second: Street_moonstars_47
+  - first:
+      213: 4549380243332822547
+    second: Street_moonstars_48
+  - first:
+      213: -6832092046209202706
+    second: Street_moonstars_49
+  - first:
+      213: -7470601756622852808
+    second: Street_moonstars_50
+  - first:
+      213: 1188935553645509831
+    second: Street_moonstars_51
+  - first:
+      213: -3722363963303376798
+    second: Street_moonstars_52
+  - first:
+      213: -8464519409381697415
+    second: Street_moonstars_53
+  - first:
+      213: -1898924200175557242
+    second: Street_moonstars_54
+  - first:
+      213: -7927505734751252518
+    second: Street_moonstars_55
+  - first:
+      213: 3662572020992733334
+    second: Street_moonstars_56
+  - first:
+      213: -1692548829892149370
+    second: Street_moonstars_57
+  - first:
+      213: -6309701485724785438
+    second: Street_moonstars_58
+  - first:
+      213: -4469827806164431193
+    second: Street_moonstars_59
+  - first:
+      213: -8974708243848853736
+    second: Street_moonstars_60
+  - first:
+      213: 8995422063076070528
+    second: Street_moonstars_61
+  - first:
+      213: 2396096643486630915
+    second: Street_moonstars_62
+  - first:
+      213: -8570135665965431683
+    second: Street_moonstars_63
+  - first:
+      213: -676355697619094516
+    second: Street_moonstars_64
+  - first:
+      213: 6977134356955233388
+    second: Street_moonstars_65
+  - first:
+      213: 3120575800299717361
+    second: Street_moonstars_66
+  - first:
+      213: 8449024535676071507
+    second: Street_moonstars_67
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Street_moonstars_0
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 712
+        width: 377
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d695d32c382f835a0800000000000000
+      internalID: -6541211811042207379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_1
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 1024
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd07ce1706e65d160800000000000000
+      internalID: 7049662152225616095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_2
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1015
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db5a876c0c83ccda0800000000000000
+      internalID: -5923297009284373059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_3
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 1025
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3844d44c461ab700800000000000000
+      internalID: 556782020761765948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_4
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 993
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2399ed829ec051df0800000000000000
+      internalID: -210247612050269902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_5
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 1004
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ba3a0e7ccf9cf9b0800000000000000
+      internalID: -5044981781925053775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_6
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 958
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 173d785c7fd4a9800800000000000000
+      internalID: 619893625283138417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_7
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 950
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da908cd35166d16f0800000000000000
+      internalID: -712300924637804115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_8
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 928
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6742664115e75fb50800000000000000
+      internalID: 6626341313445241974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_9
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 921
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d026cd38cec9dbe80800000000000000
+      internalID: -8161194410086997491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_10
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 881
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0945d114b25ddd720800000000000000
+      internalID: 2872686519084995728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_11
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 862
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d53efe215bcba5190800000000000000
+      internalID: -7972852704413228195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 804
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bfdfd914e2c787e0800000000000000
+      internalID: -1763226444149825615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_13
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 794
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7ba0d8a51b88c260800000000000000
+      internalID: 7118092136201890687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_14
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 788
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef362ae4a2a159280800000000000000
+      internalID: -9037288308238818306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_15
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 762
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7913f9e28a0bbbb20800000000000000
+      internalID: 3151306600658973079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_16
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 731
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 577289ee8ae280530800000000000000
+      internalID: 3821355586916198261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_17
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 707
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 994d9349eb02723d0800000000000000
+      internalID: -3231578204712348519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_18
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 707
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efc19336961e0bdf0800000000000000
+      internalID: -166385343460205314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_19
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 710
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4b7ff531a6c96770800000000000000
+      internalID: 8604626958766013258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_20
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 684
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91e2aabc92c06a360800000000000000
+      internalID: 7180440029538954777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_21
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 646
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13179792acc517540800000000000000
+      internalID: 5003882684334305585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_22
+      rect:
+        serializedVersion: 2
+        x: 1433
+        y: 642
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a77013139622f3690800000000000000
+      internalID: -7620334209295382662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_23
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 637
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6ad5a6d35cf06950800000000000000
+      internalID: 6440424904153487980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_24
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 633
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87632fda6ca5322e0800000000000000
+      internalID: -2151776387584608648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_25
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 628
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a157dfa5939a87410800000000000000
+      internalID: 1475114941768627482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_26
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 628
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 166620b1949fda390800000000000000
+      internalID: -7805308486782130591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_27
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 635
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54f961be60d27cf40800000000000000
+      internalID: 5748612957098909509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_28
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 632
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67062594e319d7ff0800000000000000
+      internalID: -36713525244960650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_29
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 619
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce53de3a2b303eb30800000000000000
+      internalID: 4315296933740361196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_30
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 589
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7df99c362bb7adbd0800000000000000
+      internalID: -2604633428371857449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_31
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 566
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ab851caddf33fcb0800000000000000
+      internalID: -4831447753930994780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_32
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 573
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c284598c8016d040800000000000000
+      internalID: 4671939859228951241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_33
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 542
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6f223e83b8b5c010800000000000000
+      internalID: 1208575156343156588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_34
+      rect:
+        serializedVersion: 2
+        x: 1301
+        y: 504
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9edc472c612c47f40800000000000000
+      internalID: 5725414429302246889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_35
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 477
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8932f1b92f6b7c410800000000000000
+      internalID: 1497366554224829336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_36
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 471
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10402f6dfb9950320800000000000000
+      internalID: 2523592215435019265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_37
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 454
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 207267c8097becc40800000000000000
+      internalID: 5534562823544645378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_38
+      rect:
+        serializedVersion: 2
+        x: 1503
+        y: 446
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86ac3edf475b6d330800000000000000
+      internalID: 3735372455030803048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_39
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 436
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69f88548c4c4d2e30800000000000000
+      internalID: 4480321095825133462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_40
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 418
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 597951490926a9990800000000000000
+      internalID: -7378476666393880683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_41
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 425
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 320e63093a726dd10800000000000000
+      internalID: 2149949455568658467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_42
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 418
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dfe53a6970e87420800000000000000
+      internalID: 2628097194648268757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_43
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 392
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aff35092f1a81270800000000000000
+      internalID: 8221499182940422057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_44
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 379
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89b9101cbaa2ee9a0800000000000000
+      internalID: -6201972719676712040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_45
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 375
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 766e29d1aae375900800000000000000
+      internalID: 673075569676707431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_46
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 346
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8176737389305efb0800000000000000
+      internalID: -4619281890502285544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_47
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 351
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d89edf4e72203ab10800000000000000
+      internalID: 1991437830596716941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_48
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 332
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31678084a35a22f30800000000000000
+      internalID: 4549380243332822547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_49
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 322
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee5cde06b788f21a0800000000000000
+      internalID: -6832092046209202706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_50
+      rect:
+        serializedVersion: 2
+        x: 1697
+        y: 327
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83de5168847135890800000000000000
+      internalID: -7470601756622852808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_51
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 307
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cc7fd73692ff7010800000000000000
+      internalID: 1188935553645509831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_52
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 302
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 268469282b1875cc0800000000000000
+      internalID: -3722363963303376798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_53
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 231
+        width: 25
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9789761b17cf78a80800000000000000
+      internalID: -8464519409381697415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_54
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 254
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 685a429308aa5a5e0800000000000000
+      internalID: -1898924200175557242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_55
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 239
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adf87453987dbf190800000000000000
+      internalID: -7927505734751252518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_56
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 207
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6907e8319d114d230800000000000000
+      internalID: 3662572020992733334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_57
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 208
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68f76458ecbd288e0800000000000000
+      internalID: -1692548829892149370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_58
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 203
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e4ae90ddef6f68a0800000000000000
+      internalID: -6309701485724785438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_59
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 163
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aec76eda4bf7f1c0800000000000000
+      internalID: -4469827806164431193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_60
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 159
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8178e9af66e637380800000000000000
+      internalID: -8974708243848853736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_61
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 141
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0845c52e4b826dc70800000000000000
+      internalID: 8995422063076070528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_62
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 95
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 304c682c335a04120800000000000000
+      internalID: 2396096643486630915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_63
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 102
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d748931b403c01980800000000000000
+      internalID: -8570135665965431683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_64
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 87
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c043a95931a1d96f0800000000000000
+      internalID: -676355697619094516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_65
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 37
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6c7d703bb2c3d060800000000000000
+      internalID: 6977134356955233388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_66
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 8
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f28b8728238e4b20800000000000000
+      internalID: 3120575800299717361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Street_moonstars_67
+      rect:
+        serializedVersion: 2
+        x: 1784
+        y: 0
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35e2883ec07f04570800000000000000
+      internalID: 8449024535676071507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Street_moonstars_0: -6541211811042207379
+      Street_moonstars_1: 7049662152225616095
+      Street_moonstars_10: 2872686519084995728
+      Street_moonstars_11: -7972852704413228195
+      Street_moonstars_12: -1763226444149825615
+      Street_moonstars_13: 7118092136201890687
+      Street_moonstars_14: -9037288308238818306
+      Street_moonstars_15: 3151306600658973079
+      Street_moonstars_16: 3821355586916198261
+      Street_moonstars_17: -3231578204712348519
+      Street_moonstars_18: -166385343460205314
+      Street_moonstars_19: 8604626958766013258
+      Street_moonstars_2: -5923297009284373059
+      Street_moonstars_20: 7180440029538954777
+      Street_moonstars_21: 5003882684334305585
+      Street_moonstars_22: -7620334209295382662
+      Street_moonstars_23: 6440424904153487980
+      Street_moonstars_24: -2151776387584608648
+      Street_moonstars_25: 1475114941768627482
+      Street_moonstars_26: -7805308486782130591
+      Street_moonstars_27: 5748612957098909509
+      Street_moonstars_28: -36713525244960650
+      Street_moonstars_29: 4315296933740361196
+      Street_moonstars_3: 556782020761765948
+      Street_moonstars_30: -2604633428371857449
+      Street_moonstars_31: -4831447753930994780
+      Street_moonstars_32: 4671939859228951241
+      Street_moonstars_33: 1208575156343156588
+      Street_moonstars_34: 5725414429302246889
+      Street_moonstars_35: 1497366554224829336
+      Street_moonstars_36: 2523592215435019265
+      Street_moonstars_37: 5534562823544645378
+      Street_moonstars_38: 3735372455030803048
+      Street_moonstars_39: 4480321095825133462
+      Street_moonstars_4: -210247612050269902
+      Street_moonstars_40: -7378476666393880683
+      Street_moonstars_41: 2149949455568658467
+      Street_moonstars_42: 2628097194648268757
+      Street_moonstars_43: 8221499182940422057
+      Street_moonstars_44: -6201972719676712040
+      Street_moonstars_45: 673075569676707431
+      Street_moonstars_46: -4619281890502285544
+      Street_moonstars_47: 1991437830596716941
+      Street_moonstars_48: 4549380243332822547
+      Street_moonstars_49: -6832092046209202706
+      Street_moonstars_5: -5044981781925053775
+      Street_moonstars_50: -7470601756622852808
+      Street_moonstars_51: 1188935553645509831
+      Street_moonstars_52: -3722363963303376798
+      Street_moonstars_53: -8464519409381697415
+      Street_moonstars_54: -1898924200175557242
+      Street_moonstars_55: -7927505734751252518
+      Street_moonstars_56: 3662572020992733334
+      Street_moonstars_57: -1692548829892149370
+      Street_moonstars_58: -6309701485724785438
+      Street_moonstars_59: -4469827806164431193
+      Street_moonstars_6: 619893625283138417
+      Street_moonstars_60: -8974708243848853736
+      Street_moonstars_61: 8995422063076070528
+      Street_moonstars_62: 2396096643486630915
+      Street_moonstars_63: -8570135665965431683
+      Street_moonstars_64: -676355697619094516
+      Street_moonstars_65: 6977134356955233388
+      Street_moonstars_66: 3120575800299717361
+      Street_moonstars_67: 8449024535676071507
+      Street_moonstars_7: -712300924637804115
+      Street_moonstars_8: 6626341313445241974
+      Street_moonstars_9: -8161194410086997491
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
