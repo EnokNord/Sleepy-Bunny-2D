@@ -3,6 +3,8 @@ using System.Runtime.CompilerServices;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine.TextCore.Text;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class NotStuckFan : MonoBehaviour
@@ -17,7 +19,7 @@ public class NotStuckFan : MonoBehaviour
     // The Layer the payer is on. Used for a hit check
     private const int PlayerLayer = 7;
 
-    private GameObject Pushing;
+    private GameObject[] Pushing;
 
     [SerializeField] private Directions fanDirection;
     [SerializeField] private float fanPower;
@@ -32,12 +34,12 @@ public class NotStuckFan : MonoBehaviour
     
     public bool OnOff = true;
 
-    private Rigidbody2D PlayerRigidbody;
+    private List<Rigidbody2D> PlayerRigidbody;
 
     private void Start()
     {
         OnOff = onOff;
-
+        PlayerRigidbody = new List<Rigidbody2D>();
     }
     //brakes the code
     /*
@@ -109,41 +111,47 @@ public class NotStuckFan : MonoBehaviour
 
         if (other.gameObject.layer != PlayerLayer && other.gameObject.name != "box_small") return;
 
-        PlayerRigidbody = other.gameObject.GetComponent<Rigidbody2D>();
+        if (other.gameObject.name == "sleepy-bunny-character-sheet") return;
 
-        Debug.Log(PlayerRigidbody);
-
+        PlayerRigidbody.Add(other.gameObject.GetComponent<Rigidbody2D>());
+    
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.layer != PlayerLayer && other.gameObject.name != "box_small") return;
 
-        PlayerRigidbody = null; 
+        PlayerRigidbody.Remove(other.gameObject.GetComponent<Rigidbody2D>());
+
     }
 
     private void FixedUpdate()
     {
         if (PlayerRigidbody == null) return;
 
-        switch (fanDirection)
+        //So it works with several objects
+        for (int i = 0; i < PlayerRigidbody.Count; i++)
         {
+        
+            switch (fanDirection)
+            {
             case Directions.Up:
-                PlayerRigidbody.AddForce(transform.up * fanPower);
+                    PlayerRigidbody[i].AddForce(transform.up * fanPower);
                 
                 break;
 
             case Directions.Down:
-                PlayerRigidbody.AddForce(-transform.up * fanPower);
+                PlayerRigidbody[i].AddForce(-transform.up * fanPower);
                 break;
 
             case Directions.Left:
-                PlayerRigidbody.AddForce(-transform.right * fanPower);
+                PlayerRigidbody[i].AddForce(-transform.right * fanPower);
                 break;
 
             case Directions.Right:
-                PlayerRigidbody.AddForce(transform.right * fanPower);
+                PlayerRigidbody[i].AddForce(transform.right * fanPower);
                 break;
+            }
         }
 
     }
