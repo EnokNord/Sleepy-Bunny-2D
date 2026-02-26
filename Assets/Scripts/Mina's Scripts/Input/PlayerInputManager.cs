@@ -1,5 +1,6 @@
 using Events;
 using Input;
+using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using static Player.Movement.ForceAccumulate;
@@ -92,5 +93,11 @@ public class PlayerInputManager : MonoBehaviour, IDeathEvent
         //Todo: toggle reset
         playerMap.Disable();
         GetComponent<MovementAnimationController>().TriggerDeathAnimation();
+        StartCoroutine("ResetLevel");
+    }
+    IEnumerator ResetLevel()
+    {
+        yield return new WaitForSeconds(2);
+        LevelFunctionsLibrary.LevelFunctions.ResetCurrentLevel();
     }
 }

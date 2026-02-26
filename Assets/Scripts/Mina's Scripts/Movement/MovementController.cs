@@ -72,6 +72,7 @@ public class MovementController : MonoBehaviour
             {
                 rigidBody.linearVelocityY = runJumpPower;
                 rigidBody.linearVelocityX += runJumpPower * moveDirection;
+                rigidBody.linearVelocityX = Mathf.Clamp(rigidBody.linearVelocityX, 0, 40);
             }
             else rigidBody.linearVelocityY = jumpPower;
             animationController.UpdateAnimationState("Jump");
