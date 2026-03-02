@@ -1,5 +1,6 @@
 using Animation;
 using Player.Movement;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using static Global.GlobalEnumLibrary;
 [RequireComponent(typeof(Rigidbody2D))]
@@ -15,8 +16,9 @@ public class MovementController : MonoBehaviour
 
     [Header("Jump")]
     [SerializeField] private float jumpPower = 15;
-    [SerializeField] private float runJumpPower = 7.5f;
-    [SerializeField] private float horizontalRunJumpPower = 7.5f;
+    [SerializeField] private float runJumpPower = 20;
+    [SerializeField] private float horizontalRunJumpPower = 20;
+    [SerializeField] private float horizontalJumpForceCap = 40;
 
     public float WalkSpeed { get { return walkSpeed; } }
     public bool LockDirection { get; set; }
@@ -71,8 +73,8 @@ public class MovementController : MonoBehaviour
             if (isRunning)
             {
                 rigidBody.linearVelocityY = runJumpPower;
-                rigidBody.linearVelocityX += runJumpPower * moveDirection;
-                rigidBody.linearVelocityX = Mathf.Clamp(rigidBody.linearVelocityX, 0, 40);
+                rigidBody.linearVelocityX += horizontalRunJumpPower * moveDirection;
+                rigidBody.linearVelocityX = Mathf.Clamp(rigidBody.linearVelocityX, -horizontalJumpForceCap, horizontalJumpForceCap);
             }
             else rigidBody.linearVelocityY = jumpPower;
             animationController.UpdateAnimationState("Jump");
