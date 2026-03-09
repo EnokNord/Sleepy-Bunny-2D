@@ -7,6 +7,7 @@ using static Player.Movement.ForceAccumulate;
 using static UnityEngine.InputSystem.InputAction;
 [RequireComponent(typeof(MovementController))]
 [RequireComponent(typeof(ObjectMovingComponent))]
+[RequireComponent(typeof(ClimbingController))]
 public class PlayerInputManager : MonoBehaviour, IDeathEvent
 {
     public PlayerInputController.PlayerActions playerMap => inputControls.Player;
