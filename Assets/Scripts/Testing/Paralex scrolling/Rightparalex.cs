@@ -166,7 +166,7 @@ public class RightParalex : MonoBehaviour
                 }
                 return;
             }
-            Debug.Log(disty);
+           // Debug.Log(disty);
 
             transform.position = new Vector3(transform.position.x, startposY + disty, 0);
         }

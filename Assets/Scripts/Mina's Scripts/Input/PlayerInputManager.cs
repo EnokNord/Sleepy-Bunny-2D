@@ -7,12 +7,14 @@ using static Player.Movement.ForceAccumulate;
 using static UnityEngine.InputSystem.InputAction;
 [RequireComponent(typeof(MovementController))]
 [RequireComponent(typeof(ObjectMovingComponent))]
+[RequireComponent(typeof(ClimbingController))]
 public class PlayerInputManager : MonoBehaviour, IDeathEvent
 {
     public PlayerInputController.PlayerActions playerMap => inputControls.Player;
     [SerializeField] GameObject pauseMenuCanvas;
     
     MovementController playerMovementController;
+    ClimbingController climbingController;
     ObjectMovingComponent objectMovingComponent;
     PlayerInputController inputControls;
 
@@ -20,6 +22,7 @@ public class PlayerInputManager : MonoBehaviour, IDeathEvent
     {
         playerMovementController = GetComponent<MovementController>();
         objectMovingComponent = GetComponent<ObjectMovingComponent>();
+        climbingController = GetComponent<ClimbingController>();
         inputControls = new PlayerInputController();
         playerMap.Enable();
         SetupInputBindings();
@@ -33,6 +36,7 @@ public class PlayerInputManager : MonoBehaviour, IDeathEvent
         playerMap.Run.canceled -= StopRunning;
 
         playerMap.Jump.performed -= DoJump;
+        playerMap.Jump.performed -= StopClimb;
         playerMap.Jump.performed -= ReleaseObject;
 
         playerMap.Crouch.performed -= ToggleCrouching;
@@ -42,6 +46,10 @@ public class PlayerInputManager : MonoBehaviour, IDeathEvent
         playerMap.PushOrPull.canceled -= ReleaseObject;
 
         playerMap.Pause.performed -= TogglePauseMenu;
+
+        playerMap.Climb.performed -= Climb;
+        playerMap.Climb.canceled -= StopMidClimb;
+
         playerMap.Disable();
     }
     private void SetupInputBindings()
@@ -53,6 +61,7 @@ public class PlayerInputManager : MonoBehaviour, IDeathEvent
         playerMap.Run.canceled += StopRunning;
 
         playerMap.Jump.performed += DoJump;
+        playerMap.Jump.performed += StopClimb;
         playerMap.Jump.performed += ReleaseObject;
 
         playerMap.Crouch.performed += ToggleCrouching;
@@ -62,6 +71,9 @@ public class PlayerInputManager : MonoBehaviour, IDeathEvent
         playerMap.PushOrPull.canceled += ReleaseObject;
 
         playerMap.Pause.performed += TogglePauseMenu;
+
+        playerMap.Climb.performed += Climb;
+        playerMap.Climb.canceled += StopMidClimb;
     }
     private void SetWalkDirection(CallbackContext callbackContext) => playerMovementController.SetWalkDirection(callbackContext.ReadValue<float>());
     private void StopWalk(CallbackContext callbackContext) => playerMovementController.SetWalkDirection(0);
@@ -72,6 +84,9 @@ public class PlayerInputManager : MonoBehaviour, IDeathEvent
     private void StopCrouching(CallbackContext callbackContext) => playerMovementController.ToggleCrouch(false);
     private void GrabObject(CallbackContext callbackContext) => objectMovingComponent.GrabObject();
     private void ReleaseObject(CallbackContext callbackContext) => objectMovingComponent.ReleaseObject();
+    private void Climb(CallbackContext callbackContext) => climbingController.TryClimb(callbackContext.ReadValue<float>());
+    private void StopMidClimb(CallbackContext callbackContext) => climbingController.TryClimb(0);
+    private void StopClimb(CallbackContext callbackContext) => climbingController.StopClimbing();
 
     public void TogglePauseMenu(CallbackContext callbackContext)
     {

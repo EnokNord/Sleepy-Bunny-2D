@@ -22,6 +22,7 @@ public class MovementController : MonoBehaviour
 
     public float WalkSpeed { get { return walkSpeed; } }
     public bool LockDirection { get; set; }
+    public bool OnGround { get; set; }
     public MovementState CurrentState { get { return moveState; } }
     public float CurrentWalkSpeed { get { return currentWalkSpeed; } set { if(value > 0) currentWalkSpeed = value; } }
     public MovementAnimationController AnimationController { get { return animationController; } }
@@ -62,13 +63,13 @@ public class MovementController : MonoBehaviour
         }
         if(Mathf.Abs(rigidBody.linearVelocityX) < 10)
         {
-            transform.position += Vector3.right * (moveDirection * speed * Time.fixedDeltaTime);
+            transform.Translate(Vector3.right * (moveDirection * speed * Time.fixedDeltaTime));
         }
         
     }
     public void Jump()
     {
-        if (Global.GlobalFunctionsLibrary.IsGrounded(rigidBody))
+        if (OnGround || Global.GlobalFunctionsLibrary.IsGrounded(rigidBody))
         {
             if (isRunning)
             {
@@ -77,6 +78,7 @@ public class MovementController : MonoBehaviour
                 rigidBody.linearVelocityX = Mathf.Clamp(rigidBody.linearVelocityX, -horizontalJumpForceCap, horizontalJumpForceCap);
             }
             else rigidBody.linearVelocityY = jumpPower;
+            OnGround = false;
             animationController.UpdateAnimationState("Jump");
         }
     }
