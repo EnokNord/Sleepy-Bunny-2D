@@ -18,8 +18,8 @@ Lastly set a peralex scrolling value. I have set it to be 0.5f at default. but y
 public class RightParalex : MonoBehaviour
 {
     //starting values for the paralex scroling, used to ancer them to a place in the game world
-   private float startposX;
-   private float startposY;
+    private float startposX;
+    private float startposY;
 
     //The player
     private GameObject Player;
@@ -28,7 +28,7 @@ public class RightParalex : MonoBehaviour
 
     //Two special objects placed on the player. There becouse I coldn't find a way to grab the screens edges in world transform
     [SerializeField] GameObject Top;
-     [SerializeField] GameObject Bottom;
+    [SerializeField] GameObject Bottom;
 
     //Imuages and its size
     private Renderer Render;
@@ -39,6 +39,8 @@ public class RightParalex : MonoBehaviour
     //not floor or ceelling 
     public bool neither = false;
 
+    public bool Background = false;
+
     //Check for if statments
     private bool Stuck;
 
@@ -47,7 +49,7 @@ public class RightParalex : MonoBehaviour
 
     //How much the foreground should move
     public float paralexEffect = 0.5f;
-   
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -73,10 +75,10 @@ public class RightParalex : MonoBehaviour
         startposX = transform.position.x;
         startposY = transform.position.y;
 
-       
+
     }
 
-    
+
     void FixedUpdate()
     {
         //How much the foreground moves when moved by the paralexScrolling (is negative to get the right motion)
@@ -87,6 +89,12 @@ public class RightParalex : MonoBehaviour
         // X should allways be modified to keep the foreground in position
         transform.position = new Vector3(startposX + distx, transform.position.y, 0);
 
+        // should not move in Y if back ground
+        if (Background)
+        {
+            Debug.Log("Work");
+            return;
+        }
 
         if (neither)
         {
@@ -97,13 +105,16 @@ public class RightParalex : MonoBehaviour
         //The foreground should not be able to moveup or down beyond thir image.
         //To fix that I have made a series of if statments that makes sure they don't
 
+
+
+
         //This one checks to see if the foreground should be at the top of bottom of the screen
         if (CellingForeground)
         {
             //Checks if the threshold for the image is broken. The 0.5f is needed for a later point
             if (Top.transform.position.y + 0.5f > Render.bounds.max.y)
             {
-                
+
 
                 //if the foreground just now reached its treshold then trigger this code.
                 if (!Stuck)
@@ -136,24 +147,24 @@ public class RightParalex : MonoBehaviour
             //if we are not stuck move the foregorund in the Y axies
             transform.position = new Vector3(transform.position.x, startposY + disty, 0);
 
-            
         }
 
-        
+
+
         //Almost the same code as the previus one, but with diffrent peremiters. !!! THIS CAN NOT BE REMOVED AND SLAPED INTO THE PREVIUS IF STATMENTS WITH OUT EDITING IT -, < AND "BOTTOM" ARE INPORTANT !!!
         else if (!CellingForeground)
         {
 
             if (Bottom.transform.position.y - 0.5f < Render.bounds.min.y)
             {
-                
-                
+
+
                 if (!Stuck)
                 {
                     Debug.Log("render" + Render.bounds.size.y);
                     cacheY = disty;
                     Stuck = true;
-                    transform.position = new Vector3(transform.position.x,Bottom.transform.position.y + (0.5f * Render.bounds.size.y), 0);
+                    transform.position = new Vector3(transform.position.x, Bottom.transform.position.y + (0.5f * Render.bounds.size.y), 0);
                 }
 
                 if (Stuck)
@@ -166,7 +177,7 @@ public class RightParalex : MonoBehaviour
                 }
                 return;
             }
-           // Debug.Log(disty);
+            Debug.Log(disty);
 
             transform.position = new Vector3(transform.position.x, startposY + disty, 0);
         }

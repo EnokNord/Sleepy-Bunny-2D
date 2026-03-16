@@ -1671,6 +1671,14 @@ PrefabInstance:
       value: Big points
       objectReference: {fileID: 0}
     - target: {fileID: 6359742305898061974, guid: cbd6ba2660013fe46854578a7ed90c5f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6359742305898061974, guid: cbd6ba2660013fe46854578a7ed90c5f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6359742305898061974, guid: cbd6ba2660013fe46854578a7ed90c5f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 32.51
       objectReference: {fileID: 0}
@@ -1877,6 +1885,14 @@ PrefabInstance:
     - target: {fileID: 4334529887847742581, guid: cbd6ba2660013fe46854578a7ed90c5f, type: 3}
       propertyPath: m_Name
       value: Big points (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6359742305898061974, guid: cbd6ba2660013fe46854578a7ed90c5f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6359742305898061974, guid: cbd6ba2660013fe46854578a7ed90c5f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6359742305898061974, guid: cbd6ba2660013fe46854578a7ed90c5f, type: 3}
       propertyPath: m_LocalPosition.x
