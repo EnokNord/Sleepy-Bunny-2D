@@ -215,7 +215,7 @@ namespace Input
                 {
                     ""name"": ""negative"",
                     ""id"": ""109e29a6-2843-40e6-9137-f6741c497553"",
-                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -226,7 +226,7 @@ namespace Input
                 {
                     ""name"": ""positive"",
                     ""id"": ""c5abbe0b-e069-456c-ac09-c26f128b45e5"",
-                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -314,7 +314,7 @@ namespace Input
                 {
                     ""name"": """",
                     ""id"": ""4f4bbae0-0dd4-4f9f-a287-566486b9daab"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -336,7 +336,7 @@ namespace Input
                 {
                     ""name"": """",
                     ""id"": ""1e86da05-264c-4345-842b-2c038e980f36"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
