@@ -291,6 +291,28 @@
                 },
                 {
                     "name": "",
+                    "id": "15e29a37-551b-49b3-a92b-0dd7059ae4e9",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f9ed7429-7a20-4d24-8e80-8edaca178102",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "9bd9005f-e312-4949-8ca9-6afc3e8158a1",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
