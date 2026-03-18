@@ -9,6 +9,7 @@ public class ObjectMovingComponent : MonoBehaviour
     Rigidbody2D moveCompRB;
     MovementController movementController;
     float grabDirection;
+    bool grabbing;
     private void Awake()
     {
         movementController = GetComponent<MovementController>();
@@ -16,7 +17,7 @@ public class ObjectMovingComponent : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(interactableRB)
+        if(interactableRB && grabbing)
         {
             interactableRB.linearVelocity = moveCompRB.linearVelocity;
             if (movementController.CurrentState != MovementState.Walk && movementController.CurrentState != MovementState.Idle)
@@ -63,6 +64,7 @@ public class ObjectMovingComponent : MonoBehaviour
         if (interactableRB == null) return;
         movementController.CurrentWalkSpeed = movementController.WalkSpeed * Mathf.Clamp(1 - (0.2f * Mathf.RoundToInt(interactableRB.mass * 0.01f)), 0, 1);
         interactableRB.transform.parent = transform;
+        grabbing = true;
         movementController.LockDirection = true;
     }
     public void ReleaseObject()
@@ -72,6 +74,7 @@ public class ObjectMovingComponent : MonoBehaviour
         interactableRB.transform.parent = null;
         movementController.CurrentWalkSpeed = movementController.WalkSpeed;
         movementController.LockDirection = false;
+        grabbing = false;
         movementController.SetWalkDirection(movementController.MoveDirection);
 
     }
