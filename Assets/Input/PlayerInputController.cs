@@ -302,6 +302,39 @@ namespace Input
                 },
                 {
                     ""name"": """",
+                    ""id"": ""793ba8ea-44bb-4bef-8ea1-b6e66a9af23b"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PushOrPull"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""04d43673-10a1-4484-8071-4c616a6133ea"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PushOrPull"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9bb7ccbb-0f28-4b42-9c62-2118a5eb4495"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PushOrPull"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""f72ff91a-c307-4858-bb25-4af919717dc7"",
                     ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
