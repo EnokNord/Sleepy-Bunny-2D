@@ -15,7 +15,7 @@ namespace Global
             RaycastHit2D returnValue = new();
             foreach (int groundLayerMask in groundLayerMasks)
             {
-                RaycastHit2D hit = Physics2D.BoxCast(position, Vector2.one, 0, Vector2.down, groundedDistance, groundLayerMask);
+                RaycastHit2D hit = Physics2D.Raycast(position, Vector2.down, groundedDistance, groundLayerMask);
                 if (hit.transform is null) continue;
                 returnValue = hit;
             }

@@ -15,7 +15,7 @@ public class MovementAnimationController : MonoBehaviour
             if(alive && rb.linearVelocityY != 0)
             {
                 
-                if (Global.GlobalFunctionsLibrary.IsGrounded(rb, 1.5f))
+                if (Global.GlobalFunctionsLibrary.IsGrounded(rb))
                 {
                     UpdateAnimationState("OnGround", true);
                     UpdateAnimationState("IsFalling", false);
