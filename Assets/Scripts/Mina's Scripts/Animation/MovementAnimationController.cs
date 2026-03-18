@@ -43,6 +43,10 @@ public class MovementAnimationController : MonoBehaviour
     {
         animator.SetBool(animBool, newValue);
     }
+    public void UpdateAnimationState(string animFloat, float newValue)
+    {
+        animator.SetFloat(animFloat, newValue);
+    }
     public void UpdateAnimationState(string trigger)
     {
         animator.SetTrigger(trigger);

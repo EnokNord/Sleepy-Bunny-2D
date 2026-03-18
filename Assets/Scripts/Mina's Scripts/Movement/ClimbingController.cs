@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ClimbingController : MonoBehaviour
 {
@@ -9,9 +10,13 @@ public class ClimbingController : MonoBehaviour
     Rigidbody2D rb;
     float climbDir = 0;
     float gravity;
+    private MovementAnimationController animationController;
+    bool climbing;
+
     private void Awake()
     {
         movementController = GetComponent<MovementController>();
+        animationController = GetComponent<MovementAnimationController>();
         rb = GetComponent<Rigidbody2D>();
         gravity = rb.gravityScale;
     }
@@ -28,11 +33,28 @@ public class ClimbingController : MonoBehaviour
         rb.gravityScale = 0;
         movementController.OnGround = true;
         climbDir = _climbDir;
+
+        animationController.UpdateAnimationState("IsMovingUpOrDown", climbDir == 0 ? false : true);
+        if (!climbing)
+        {
+            animationController.UpdateAnimationState("StartClimbing");
+            animationController.UpdateAnimationState("IsClimbing", true);
+            climbing = true;
+        }
+        if (climbDir < 0) animationController.UpdateAnimationState("AnimDir", -1f);
+        else animationController.UpdateAnimationState("AnimDir", 1f);
+
+        animationController.UpdateAnimationState("IsFalling", false);
+
     }
     public void StopClimbing()
     {
         rb.gravityScale = gravity;
         climbDir = 0;
+
+        animationController.UpdateAnimationState("IsMovingUpOrDown", false);
+        animationController.UpdateAnimationState("IsClimbing", false);
+        climbing = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
