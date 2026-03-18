@@ -39,6 +39,11 @@ public class MovementAnimationController : MonoBehaviour
             animator.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
+    public void PauseAnimations(bool pause)
+    {
+        if (pause) animator.speed = 0;
+        else animator.speed = 1;
+    }
     public void UpdateAnimationState(string animBool, bool newValue)
     {
         animator.SetBool(animBool, newValue);

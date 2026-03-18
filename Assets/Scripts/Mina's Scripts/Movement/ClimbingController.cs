@@ -44,6 +44,9 @@ public class ClimbingController : MonoBehaviour
         if (climbDir < 0) animationController.UpdateAnimationState("AnimDir", -1f);
         else animationController.UpdateAnimationState("AnimDir", 1f);
 
+        if(climbDir == 0) animationController.PauseAnimations(true);
+        else animationController.PauseAnimations(false);
+
         animationController.UpdateAnimationState("IsFalling", false);
 
     }
@@ -51,7 +54,7 @@ public class ClimbingController : MonoBehaviour
     {
         rb.gravityScale = gravity;
         climbDir = 0;
-
+        animationController.PauseAnimations(false);
         animationController.UpdateAnimationState("IsMovingUpOrDown", false);
         animationController.UpdateAnimationState("IsClimbing", false);
         climbing = false;
