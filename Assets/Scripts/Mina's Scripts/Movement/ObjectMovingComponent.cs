@@ -18,8 +18,8 @@ public class ObjectMovingComponent : MonoBehaviour
     {
         if(interactableRB)
         {
-            interactableRB.gameObject.transform.position += Vector3.right * (movementController.MoveDirection * movementController.CurrentWalkSpeed * Time.fixedDeltaTime);
-            if(movementController.CurrentState != MovementState.Walk && movementController.CurrentState != MovementState.Idle)
+            interactableRB.linearVelocity = moveCompRB.linearVelocity;
+            if (movementController.CurrentState != MovementState.Walk && movementController.CurrentState != MovementState.Idle)
             {
                 ReleaseObject();
             }
@@ -42,7 +42,7 @@ public class ObjectMovingComponent : MonoBehaviour
        if(collision.gameObject.layer == 6 && collision.attachedRigidbody)
        {
             interactableRB = collision.attachedRigidbody;
-            movementController.CurrentWalkSpeed = movementController.WalkSpeed * Mathf.Clamp(1 - (0.2f * Mathf.RoundToInt(interactableRB.mass * 0.01f)), 0, 1);
+           
             movementController.AnimationController.UpdateAnimationState("IsPushing", true);
             grabDirection = movementController.MoveDirection;
         }
@@ -53,6 +53,7 @@ public class ObjectMovingComponent : MonoBehaviour
         movementController.AnimationController.UpdateAnimationState("IsPushing", false);
         movementController.AnimationController.UpdateAnimationState("IsPulling", false);
         movementController.CurrentWalkSpeed = movementController.WalkSpeed;
+        interactableRB.transform.parent = null;
         interactableRB = null;
         movementController.LockDirection = false;
         movementController.SetWalkDirection(movementController.MoveDirection);
@@ -60,12 +61,16 @@ public class ObjectMovingComponent : MonoBehaviour
     public void GrabObject()
     {
         if (interactableRB == null) return;
+        movementController.CurrentWalkSpeed = movementController.WalkSpeed * Mathf.Clamp(1 - (0.2f * Mathf.RoundToInt(interactableRB.mass * 0.01f)), 0, 1);
+        interactableRB.transform.parent = transform;
         movementController.LockDirection = true;
     }
     public void ReleaseObject()
     {
         if (interactableRB == null) return;
         movementController.AnimationController.UpdateAnimationState("IsPulling", false);
+        interactableRB.transform.parent = null;
+        movementController.CurrentWalkSpeed = movementController.WalkSpeed;
         movementController.LockDirection = false;
         movementController.SetWalkDirection(movementController.MoveDirection);
 
