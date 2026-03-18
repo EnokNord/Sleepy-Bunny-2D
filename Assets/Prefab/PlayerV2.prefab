@@ -1316,6 +1316,7 @@ GameObject:
   - component: {fileID: 5727871360423219487}
   - component: {fileID: 1187185070316274164}
   - component: {fileID: 8679215112775062517}
+  - component: {fileID: 8169490370751733864}
   m_Layer: 7
   m_Name: PlayerV2
   m_TagString: Player
@@ -1422,6 +1423,7 @@ MonoBehaviour:
   jumpPower: 25
   runJumpPower: 20
   horizontalRunJumpPower: 20
+  horizontalJumpForceCap: 40
 --- !u!114 &3741439219054386337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1502,6 +1504,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8169490370751733864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4106330609389376741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86be95e975cf3af44bbfa08664287e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClimbingController
+  climbSpeed: 5
 --- !u!1 &4145599745968323594
 GameObject:
   m_ObjectHideFlags: 0
@@ -2004,7 +2019,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.96, y: -0.25}
+  m_Offset: {x: 0.6, y: -0.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2014,7 +2029,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.73, y: 1.83}
+  m_Size: {x: 0.25, y: 1.83}
   m_EdgeRadius: 0
 --- !u!1 &5541836004398408769
 GameObject:
@@ -2707,7 +2722,7 @@ Transform:
   m_GameObject: {fileID: 8330632010135365437}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -47.6, y: 4.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
