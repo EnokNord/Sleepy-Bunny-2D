@@ -1317,6 +1317,7 @@ GameObject:
   - component: {fileID: 1187185070316274164}
   - component: {fileID: 8679215112775062517}
   - component: {fileID: 8169490370751733864}
+  - component: {fileID: 2477595217135098815}
   m_Layer: 7
   m_Name: PlayerV2
   m_TagString: Player
@@ -1517,6 +1518,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClimbingController
   climbSpeed: 5
+--- !u!114 &2477595217135098815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4106330609389376741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a3f4d3e13dabe34da4bea8143ecf9ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealthComponent
+  deathHeight: 30
 --- !u!1 &4145599745968323594
 GameObject:
   m_ObjectHideFlags: 0

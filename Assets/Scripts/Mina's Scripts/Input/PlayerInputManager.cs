@@ -8,7 +8,8 @@ using static UnityEngine.InputSystem.InputAction;
 [RequireComponent(typeof(MovementController))]
 [RequireComponent(typeof(ObjectMovingComponent))]
 [RequireComponent(typeof(ClimbingController))]
-public class PlayerInputManager : MonoBehaviour, IDeathEvent
+[RequireComponent(typeof(PlayerHealthComponent))]
+public class PlayerInputManager : MonoBehaviour
 {
     public PlayerInputController.PlayerActions playerMap => inputControls.Player;
     [SerializeField] GameObject pauseMenuCanvas;
@@ -103,16 +104,13 @@ public class PlayerInputManager : MonoBehaviour, IDeathEvent
         }
     }
 
-    public void TriggerDeathEvent()
+    public void DisableInput()
     {
-        //Todo: toggle reset
         playerMap.Disable();
-        GetComponent<MovementAnimationController>().TriggerDeathAnimation();
-        StartCoroutine("ResetLevel");
     }
-    IEnumerator ResetLevel()
+    public void EnableInput()
     {
-        yield return new WaitForSeconds(2);
-        LevelFunctionsLibrary.LevelFunctions.ResetCurrentLevel();
+        playerMap.Enable();
     }
+   
 }
