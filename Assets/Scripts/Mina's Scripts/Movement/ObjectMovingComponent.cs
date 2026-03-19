@@ -50,7 +50,8 @@ public class ObjectMovingComponent : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.isTrigger) return;
+        if (collision.isTrigger || (collision.gameObject.layer != 6)) return;
+       
         movementController.AnimationController.UpdateAnimationState("IsPushing", false);
         movementController.AnimationController.UpdateAnimationState("IsPulling", false);
         movementController.CurrentWalkSpeed = movementController.WalkSpeed;

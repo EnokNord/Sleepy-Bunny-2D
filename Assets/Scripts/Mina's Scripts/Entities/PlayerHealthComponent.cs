@@ -4,10 +4,12 @@ using System.Collections;
 public class PlayerHealthComponent : HealthComponent
 {
     [SerializeField] float deathHeight = 30;
+    [SerializeField] float impactVelocityThreshold = 40;
     PlayerInputManager inputManager;
     Rigidbody2D rb;
     bool falling;
     float fallHeight;
+    float impactVelocity = 0;
     protected override void Initialize()
     {
         inputManager = GetComponent<PlayerInputManager>();
@@ -23,9 +25,9 @@ public class PlayerHealthComponent : HealthComponent
         }
         if(falling && rb.linearVelocityY >= 0)
         {
-            if(fallHeight - transform.position.y >= deathHeight) TriggerDeathEvent();
+            if(fallHeight - transform.position.y >= deathHeight && impactVelocity > impactVelocityThreshold) TriggerDeathEvent();
             falling = false;
-
+            impactVelocity = 0;
         }
         
     }
@@ -44,5 +46,9 @@ public class PlayerHealthComponent : HealthComponent
     {
         yield return new WaitForSeconds(2);
         LevelFunctionsLibrary.LevelFunctions.ResetCurrentLevel();
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        impactVelocity = collision.relativeVelocity.y;
     }
 }
