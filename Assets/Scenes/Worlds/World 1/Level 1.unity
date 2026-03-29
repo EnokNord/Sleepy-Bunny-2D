@@ -5309,6 +5309,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1230616161143128021, guid: 8def76f39a7cd3041b26bd8389dc878c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c36c3ce1052cba045ab4422ce544bfd7, type: 2}
     - target: {fileID: 2399662148234888613, guid: 8def76f39a7cd3041b26bd8389dc878c, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6965,9 +6969,9 @@ GameObject:
   - component: {fileID: 2046420696}
   - component: {fileID: 2046420695}
   - component: {fileID: 2046420694}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_pile_0
-  m_TagString: Untagged
+  m_TagString: Climbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

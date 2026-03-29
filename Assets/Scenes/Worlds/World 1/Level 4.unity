@@ -6639,6 +6639,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: scarf_pile_0
       objectReference: {fileID: 0}
+    - target: {fileID: 6465743728157939350, guid: 9186816b61486c34ea51a3b29975e8ce, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465743728157939350, guid: 9186816b61486c34ea51a3b29975e8ce, type: 3}
+      propertyPath: m_TagString
+      value: Climbable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1241472924716919960, guid: 9186816b61486c34ea51a3b29975e8ce, type: 3}
