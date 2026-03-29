@@ -43,8 +43,7 @@ public class ObjectMovingComponent : MonoBehaviour
        if(collision.gameObject.layer == 6 && collision.attachedRigidbody)
        {
             interactableRB = collision.attachedRigidbody;
-           
-            movementController.AnimationController.UpdateAnimationState("IsPushing", true);
+            interactableRB.constraints = RigidbodyConstraints2D.FreezeAll;
             grabDirection = movementController.MoveDirection;
         }
     }
@@ -65,13 +64,17 @@ public class ObjectMovingComponent : MonoBehaviour
         if (interactableRB == null) return;
         movementController.CurrentWalkSpeed = movementController.WalkSpeed * Mathf.Clamp(1 - (0.2f * Mathf.RoundToInt(interactableRB.mass * 0.01f)), 0, 1);
         interactableRB.transform.parent = transform;
+        interactableRB.constraints = RigidbodyConstraints2D.FreezeRotation;
         grabbing = true;
+        movementController.AnimationController.UpdateAnimationState("IsPushing", true);
         movementController.LockDirection = true;
     }
     public void ReleaseObject()
     {
         if (interactableRB == null) return;
         movementController.AnimationController.UpdateAnimationState("IsPulling", false);
+        movementController.AnimationController.UpdateAnimationState("IsPushing", false);
+        interactableRB.constraints = RigidbodyConstraints2D.FreezeAll;
         interactableRB.transform.parent = null;
         movementController.CurrentWalkSpeed = movementController.WalkSpeed;
         movementController.LockDirection = false;

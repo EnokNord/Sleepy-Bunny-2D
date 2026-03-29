@@ -1531,6 +1531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealthComponent
   deathHeight: 30
+  impactVelocityThreshold: 40
 --- !u!1 &4145599745968323594
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,7 +1988,7 @@ Animator:
   m_GameObject: {fileID: 5479857050728421184}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7cbaff4cac5cd8c479600ea24e1cfc35, type: 2}
+  m_Controller: {fileID: 9100000, guid: c36c3ce1052cba045ab4422ce544bfd7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2736,7 +2737,7 @@ Transform:
   m_GameObject: {fileID: 8330632010135365437}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -2.5, y: 12.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
