@@ -1,3 +1,4 @@
+using Animation.States;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -6,6 +7,7 @@ public class MovementAnimationController : MonoBehaviour
     [SerializeField]Animator animator;
     Rigidbody2D rb;
     bool alive = true;
+    bool landing;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -19,7 +21,9 @@ public class MovementAnimationController : MonoBehaviour
                 {
                     UpdateAnimationState("OnGround", true);
                     UpdateAnimationState("IsFalling", false);
-                }
+                    UpdateAnimationState("Landing", true);
+                landing = true;
+            }
                 else
                 {
                      UpdateAnimationState("OnGround", false);
@@ -27,6 +31,16 @@ public class MovementAnimationController : MonoBehaviour
                 }
 
             }
+        if (landing)
+        {
+            AnimatorClipInfo[] animatorinfo = animator.GetCurrentAnimatorClipInfo(0);
+            if(animatorinfo[0].clip.name != "landing_right" && animatorinfo[0].clip.name != "fall_right")
+            {
+                UpdateAnimationState("Landing", false);
+                landing = false;
+            }
+        }
+        
     }
     public void UpdateDirectionalFacing(float moveDirection)
     {

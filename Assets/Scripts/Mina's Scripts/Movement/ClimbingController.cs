@@ -41,11 +41,14 @@ public class ClimbingController : MonoBehaviour
             animationController.UpdateAnimationState("IsClimbing", true);
             climbing = true;
         }
-        if (climbDir < 0) animationController.UpdateAnimationState("AnimDir", -1f);
-        else animationController.UpdateAnimationState("AnimDir", 1f);
-
-        if(climbDir == 0) animationController.PauseAnimations(true);
-        else animationController.PauseAnimations(false);
+        switch (climbDir)
+        {
+            case < 0: animationController.UpdateAnimationState("AnimDir", -1f); break;
+            case > 0: animationController.UpdateAnimationState("AnimDir", 1f); break;
+            case 0: animationController.UpdateAnimationState("AnimDir", 0f); break;
+            default:
+                break;
+        }
 
         animationController.UpdateAnimationState("IsFalling", false);
 

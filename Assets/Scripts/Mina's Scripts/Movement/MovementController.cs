@@ -29,7 +29,7 @@ public class MovementController : MonoBehaviour
     public float MoveDirection {  get { return moveDirection; } }
    
     
-    Rigidbody2D rigidBody;
+    private Rigidbody2D rigidBody;
     private float currentWalkSpeed;
     private MovementState moveState = MovementState.Idle;
     private MovementAnimationController animationController;
