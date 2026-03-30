@@ -72,7 +72,7 @@ public class MovementAnimationController : MonoBehaviour
     }
     public void TriggerDeathAnimation()
     {
-        animator.SetTrigger("Death");
+        UpdateAnimationState("Dead", true);
         alive = false;
     }
 }

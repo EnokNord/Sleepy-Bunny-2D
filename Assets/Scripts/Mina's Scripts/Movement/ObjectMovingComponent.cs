@@ -54,6 +54,7 @@ public class ObjectMovingComponent : MonoBehaviour
         movementController.AnimationController.UpdateAnimationState("IsPushing", false);
         movementController.AnimationController.UpdateAnimationState("IsPulling", false);
         movementController.CurrentWalkSpeed = movementController.WalkSpeed;
+        interactableRB.constraints = RigidbodyConstraints2D.FreezeRotation;
         interactableRB.transform.parent = null;
         interactableRB = null;
         movementController.LockDirection = false;
