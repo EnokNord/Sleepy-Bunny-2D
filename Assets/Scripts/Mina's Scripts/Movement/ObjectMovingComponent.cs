@@ -5,6 +5,8 @@ public class ObjectMovingComponent : MonoBehaviour
 {
     // Todo: Rework and create interact class
     // Todo: clean up the code, there are multiple things that need to be optimized
+    public bool CanGrab {  get; private set; }
+
     Rigidbody2D interactableRB;
     Rigidbody2D moveCompRB;
     MovementController movementController;
@@ -43,7 +45,8 @@ public class ObjectMovingComponent : MonoBehaviour
        if(collision.gameObject.layer == 6 && collision.attachedRigidbody)
        {
             interactableRB = collision.attachedRigidbody;
-            interactableRB.constraints = RigidbodyConstraints2D.FreezeAll;
+            if (Global.GlobalFunctionsLibrary.IsGrounded(interactableRB)) interactableRB.constraints = RigidbodyConstraints2D.FreezeAll;
+            CanGrab = true;
             grabDirection = movementController.MoveDirection;
         }
     }
@@ -58,8 +61,10 @@ public class ObjectMovingComponent : MonoBehaviour
         interactableRB.transform.parent = null;
         interactableRB = null;
         movementController.LockDirection = false;
+        CanGrab = false;
         movementController.SetWalkDirection(movementController.MoveDirection);
     }
+   
     public void GrabObject()
     {
         if (interactableRB == null) return;
@@ -75,7 +80,7 @@ public class ObjectMovingComponent : MonoBehaviour
         if (interactableRB == null) return;
         movementController.AnimationController.UpdateAnimationState("IsPulling", false);
         movementController.AnimationController.UpdateAnimationState("IsPushing", false);
-        interactableRB.constraints = RigidbodyConstraints2D.FreezeAll;
+        if(Global.GlobalFunctionsLibrary.IsGrounded(interactableRB)) interactableRB.constraints = RigidbodyConstraints2D.FreezeAll;
         interactableRB.transform.parent = null;
         movementController.CurrentWalkSpeed = movementController.WalkSpeed;
         movementController.LockDirection = false;

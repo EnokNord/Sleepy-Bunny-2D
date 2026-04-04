@@ -22,7 +22,7 @@ public class MovementController : MonoBehaviour
 
     public float WalkSpeed { get { return walkSpeed; } }
     public bool LockDirection { get; set; }
-    public bool OnGround { get; set; }
+    public bool Climbing { get; set; }
     public MovementState CurrentState { get { return moveState; } }
     public float CurrentWalkSpeed { get { return currentWalkSpeed; } set { if(value > 0) currentWalkSpeed = value; } }
     public MovementAnimationController AnimationController { get { return animationController; } }
@@ -69,7 +69,7 @@ public class MovementController : MonoBehaviour
     }
     public void Jump()
     {
-        if (OnGround || Global.GlobalFunctionsLibrary.IsGrounded(rigidBody))
+        if (Climbing || Global.GlobalFunctionsLibrary.IsGrounded(rigidBody))
         {
             if (isRunning)
             {
@@ -78,7 +78,7 @@ public class MovementController : MonoBehaviour
                 rigidBody.linearVelocityX = Mathf.Clamp(rigidBody.linearVelocityX, -horizontalJumpForceCap, horizontalJumpForceCap);
             }
             else rigidBody.linearVelocityY = jumpPower;
-            OnGround = false;
+            Climbing = false;
             animationController.UpdateAnimationState("Jump");
         }
     }

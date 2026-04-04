@@ -23,7 +23,7 @@ namespace Global
             if (returnValue.transform is not null) 
                 Debug.DrawLine(position, new Vector2(position.x ,position.y + Vector2.down.y * groundedDistance), Color.black, 1000);
             #endif 
-            return returnValue.transform is not null;
+            return returnValue.transform is not null && returnValue.transform != rigidbody2D.transform;
         }
 
         public static bool IsFloating(Rigidbody2D rigidbody2D, float groundedDistance = 2f)

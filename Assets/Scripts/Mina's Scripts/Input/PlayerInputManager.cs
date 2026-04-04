@@ -38,13 +38,13 @@ public class PlayerInputManager : MonoBehaviour
 
         playerMap.Jump.performed -= DoJump;
         playerMap.Jump.performed -= StopClimb;
-        playerMap.Jump.performed -= ReleaseObject;
+        playerMap.Jump.performed -= InteractReleased;
 
         playerMap.Crouch.performed -= ToggleCrouching;
         playerMap.Crouch.canceled -= StopCrouching;
 
-        playerMap.PushOrPull.performed -= GrabObject;
-        playerMap.PushOrPull.canceled -= ReleaseObject;
+        playerMap.Interact.performed -= InteractPressed;
+        playerMap.Interact.canceled -= InteractReleased;
 
         playerMap.Pause.performed -= TogglePauseMenu;
 
@@ -63,13 +63,13 @@ public class PlayerInputManager : MonoBehaviour
 
         playerMap.Jump.performed += DoJump;
         playerMap.Jump.performed += StopClimb;
-        playerMap.Jump.performed += ReleaseObject;
+        playerMap.Jump.performed += InteractReleased;
 
         playerMap.Crouch.performed += ToggleCrouching;
         playerMap.Crouch.canceled += StopCrouching;
 
-        playerMap.PushOrPull.performed += GrabObject;
-        playerMap.PushOrPull.canceled += ReleaseObject;
+        playerMap.Interact.performed += InteractPressed;
+        playerMap.Interact.canceled += InteractReleased;
 
         playerMap.Pause.performed += TogglePauseMenu;
 
@@ -83,12 +83,18 @@ public class PlayerInputManager : MonoBehaviour
     private void DoJump(CallbackContext callbackContext) => playerMovementController.Jump();
     private void ToggleCrouching(CallbackContext callbackContext) => playerMovementController.ToggleCrouch(true);
     private void StopCrouching(CallbackContext callbackContext) => playerMovementController.ToggleCrouch(false);
-    private void GrabObject(CallbackContext callbackContext) => objectMovingComponent.GrabObject();
-    private void ReleaseObject(CallbackContext callbackContext) => objectMovingComponent.ReleaseObject();
     private void Climb(CallbackContext callbackContext) => climbingController.TryClimb(callbackContext.ReadValue<float>());
     private void StopMidClimb(CallbackContext callbackContext) => climbingController.TryClimb(0);
     private void StopClimb(CallbackContext callbackContext) => climbingController.StopClimbing();
 
+    private void InteractPressed(CallbackContext callbackContext)
+    {
+        if(objectMovingComponent.CanGrab) objectMovingComponent.GrabObject();
+    }
+    private void InteractReleased(CallbackContext callbackContext)
+    {
+        objectMovingComponent.ReleaseObject();
+    }
     public void TogglePauseMenu(CallbackContext callbackContext)
     {
         if (pauseMenuCanvas == null) return;
