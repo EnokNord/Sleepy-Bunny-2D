@@ -1,4 +1,5 @@
 using Animation;
+using Global;
 using Player.Movement;
 using System.Runtime.CompilerServices;
 using UnityEngine;
@@ -35,6 +36,7 @@ public class MovementController : MonoBehaviour
     private MovementAnimationController animationController;
     private float moveDirection = 0f;
     private bool isCrouching = false;
+    private bool checkForUncrouch;
     private bool isRunning = false;
     private Vector2 originalHitboxSize;
     private Vector2 originalHitboxOffset;
@@ -52,6 +54,8 @@ public class MovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (checkForUncrouch && !GlobalFunctionsLibrary.IsGrounded(rigidBody, 1, -1)) ToggleCrouch(false);
+        
         float speed = currentWalkSpeed;
         switch (moveState)
         {
@@ -69,7 +73,8 @@ public class MovementController : MonoBehaviour
     }
     public void Jump()
     {
-        if (Climbing || Global.GlobalFunctionsLibrary.IsGrounded(rigidBody))
+        if (GlobalFunctionsLibrary.IsGrounded(rigidBody, 1, -1)) return;
+        if (Climbing || GlobalFunctionsLibrary.IsGrounded(rigidBody))
         {
             if (isRunning)
             {
@@ -92,17 +97,15 @@ public class MovementController : MonoBehaviour
     }
     public void ToggleRunning(bool isNowRunning)
     {  
+        if (isNowRunning && isCrouching && !ToggleCrouch(false)) return;
         isRunning = isNowRunning;
-        if (isRunning && isCrouching)
-        {
-            ToggleCrouch(false);
-            animationController.UpdateAnimationState("IsCrouching", isCrouching);
-        }
         UpdateMovementState();
     }
-    public void ToggleCrouch(bool isNowCrouching)
+    public bool ToggleCrouch(bool isNowCrouching)
     {
+        if (!isNowCrouching && GlobalFunctionsLibrary.IsGrounded(rigidBody, 1, -1)) { checkForUncrouch = true; return false; }
         isCrouching = isNowCrouching;
+        checkForUncrouch = false;
         if (isCrouching)
         {
             ToggleRunning(false);
@@ -116,6 +119,7 @@ public class MovementController : MonoBehaviour
         }
         animationController.UpdateAnimationState("IsCrouching", isCrouching);
         UpdateMovementState();
+        return true;
     }
     public void UpdateMovementState()
     {

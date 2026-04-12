@@ -8,14 +8,14 @@ namespace Global
     public static class GlobalFunctionsLibrary
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IsGrounded(Rigidbody2D rigidbody2D, float groundedDistance = 2f)
+        public static bool IsGrounded(Rigidbody2D rigidbody2D, float groundedDistance = 2f, float groundDirection = 1)
         {
             int[] groundLayerMasks = { GroundLayerMask, PushAndPullLayerMask };
             Vector2 position = rigidbody2D.position;
             RaycastHit2D returnValue = new();
             foreach (int groundLayerMask in groundLayerMasks)
             {
-                RaycastHit2D hit = Physics2D.Raycast(position, Vector2.down, groundedDistance, groundLayerMask);
+                RaycastHit2D hit = Physics2D.Raycast(position, Vector2.down * groundDirection, groundedDistance, groundLayerMask);
                 if (hit.transform is null) continue;
                 returnValue = hit;
             }
@@ -25,6 +25,7 @@ namespace Global
             #endif 
             return returnValue.transform is not null && returnValue.transform != rigidbody2D.transform;
         }
+       
 
         public static bool IsFloating(Rigidbody2D rigidbody2D, float groundedDistance = 2f)
         {
