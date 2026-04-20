@@ -1,4 +1,5 @@
 using Animation;
+using Global;
 using Player.Movement;
 using System.Runtime.CompilerServices;
 using UnityEngine;
@@ -22,19 +23,20 @@ public class MovementController : MonoBehaviour
 
     public float WalkSpeed { get { return walkSpeed; } }
     public bool LockDirection { get; set; }
-    public bool OnGround { get; set; }
+    public bool Climbing { get; set; }
     public MovementState CurrentState { get { return moveState; } }
     public float CurrentWalkSpeed { get { return currentWalkSpeed; } set { if(value > 0) currentWalkSpeed = value; } }
     public MovementAnimationController AnimationController { get { return animationController; } }
     public float MoveDirection {  get { return moveDirection; } }
    
     
-    Rigidbody2D rigidBody;
+    private Rigidbody2D rigidBody;
     private float currentWalkSpeed;
     private MovementState moveState = MovementState.Idle;
     private MovementAnimationController animationController;
     private float moveDirection = 0f;
     private bool isCrouching = false;
+    private bool checkForUncrouch;
     private bool isRunning = false;
     private Vector2 originalHitboxSize;
     private Vector2 originalHitboxOffset;
@@ -52,6 +54,8 @@ public class MovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (checkForUncrouch && !GlobalFunctionsLibrary.IsGrounded(rigidBody, 1, -1)) ToggleCrouch(false);
+        
         float speed = currentWalkSpeed;
         switch (moveState)
         {
@@ -69,7 +73,8 @@ public class MovementController : MonoBehaviour
     }
     public void Jump()
     {
-        if (OnGround || Global.GlobalFunctionsLibrary.IsGrounded(rigidBody))
+        if (GlobalFunctionsLibrary.IsGrounded(rigidBody, 1, -1)) return;
+        if (Climbing || GlobalFunctionsLibrary.IsGrounded(rigidBody))
         {
             if (isRunning)
             {
@@ -78,7 +83,7 @@ public class MovementController : MonoBehaviour
                 rigidBody.linearVelocityX = Mathf.Clamp(rigidBody.linearVelocityX, -horizontalJumpForceCap, horizontalJumpForceCap);
             }
             else rigidBody.linearVelocityY = jumpPower;
-            OnGround = false;
+            Climbing = false;
             animationController.UpdateAnimationState("Jump");
         }
     }
@@ -87,21 +92,20 @@ public class MovementController : MonoBehaviour
         moveDirection = newMoveDirection;
         if (!LockDirection) animationController.UpdateDirectionalFacing(moveDirection);
         animationController.UpdateAnimationState("IsWalking", moveDirection == 0 ? false : true);
+        animationController.PauseAnimations(false);
         UpdateMovementState();
     }
     public void ToggleRunning(bool isNowRunning)
     {  
+        if (isNowRunning && isCrouching && !ToggleCrouch(false)) return;
         isRunning = isNowRunning;
-        if (isRunning && isCrouching)
-        {
-            ToggleCrouch(false);
-            animationController.UpdateAnimationState("IsCrouching", isCrouching);
-        }
         UpdateMovementState();
     }
-    public void ToggleCrouch(bool isNowCrouching)
+    public bool ToggleCrouch(bool isNowCrouching)
     {
+        if (!isNowCrouching && GlobalFunctionsLibrary.IsGrounded(rigidBody, 1, -1)) { checkForUncrouch = true; return false; }
         isCrouching = isNowCrouching;
+        checkForUncrouch = false;
         if (isCrouching)
         {
             ToggleRunning(false);
@@ -115,6 +119,7 @@ public class MovementController : MonoBehaviour
         }
         animationController.UpdateAnimationState("IsCrouching", isCrouching);
         UpdateMovementState();
+        return true;
     }
     public void UpdateMovementState()
     {

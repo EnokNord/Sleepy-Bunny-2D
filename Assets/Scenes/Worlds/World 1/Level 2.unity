@@ -851,7 +851,7 @@ GameObject:
   m_Component:
   - component: {fileID: 206617062}
   - component: {fileID: 206617063}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1586,9 +1586,9 @@ GameObject:
   - component: {fileID: 353097209}
   - component: {fileID: 353097208}
   - component: {fileID: 353097207}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_pile_0 (4)
-  m_TagString: Untagged
+  m_TagString: Climbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2415,7 +2415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 486581958}
   - component: {fileID: 486581959}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2505,7 +2505,7 @@ GameObject:
   m_Component:
   - component: {fileID: 488251485}
   - component: {fileID: 488251486}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2911,9 +2911,9 @@ GameObject:
   - component: {fileID: 581124887}
   - component: {fileID: 581124886}
   - component: {fileID: 581124885}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_pile_0
-  m_TagString: Untagged
+  m_TagString: Climbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3322,7 +3322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 643959526}
   - component: {fileID: 643959527}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3860,7 +3860,7 @@ GameObject:
   m_Component:
   - component: {fileID: 740058261}
   - component: {fileID: 740058262}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_0 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3950,7 +3950,7 @@ GameObject:
   m_Component:
   - component: {fileID: 748193840}
   - component: {fileID: 748193841}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4101,7 +4101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 820176558}
   - component: {fileID: 820176559}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4811,7 +4811,7 @@ GameObject:
   m_Component:
   - component: {fileID: 984258453}
   - component: {fileID: 984258454}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5211,7 +5211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1066729751}
   - component: {fileID: 1066729752}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5495,7 +5495,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1203170331}
   - component: {fileID: 1203170332}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5585,7 +5585,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1210359032}
   - component: {fileID: 1210359033}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5749,9 +5749,9 @@ GameObject:
   - component: {fileID: 1213491547}
   - component: {fileID: 1213491546}
   - component: {fileID: 1213491545}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_pile_0 (3)
-  m_TagString: Untagged
+  m_TagString: Climbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5887,7 +5887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1251111834}
   - component: {fileID: 1251111835}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6068,7 +6068,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1281058532}
   - component: {fileID: 1281058533}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_end_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6158,7 +6158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1341066500}
   - component: {fileID: 1341066501}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6321,7 +6321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1355675250}
   - component: {fileID: 1355675251}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8123,9 +8123,9 @@ GameObject:
   - component: {fileID: 1724494894}
   - component: {fileID: 1724494893}
   - component: {fileID: 1724494892}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_pile_0 (2)
-  m_TagString: Untagged
+  m_TagString: Climbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8456,7 +8456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1776935009}
   - component: {fileID: 1776935010}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_0 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8721,9 +8721,9 @@ GameObject:
   - component: {fileID: 1820682590}
   - component: {fileID: 1820682589}
   - component: {fileID: 1820682588}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_pile_0 (1)
-  m_TagString: Untagged
+  m_TagString: Climbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9285,7 +9285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1952256561}
   - component: {fileID: 1952256562}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_0 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10009,7 +10009,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2046189325}
   - component: {fileID: 2046189326}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_0 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10293,7 +10293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2072852560}
   - component: {fileID: 2072852561}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_0 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10440,7 +10440,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2099445292}
   - component: {fileID: 2099445293}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10562,7 +10562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2134227724}
   - component: {fileID: 2134227725}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

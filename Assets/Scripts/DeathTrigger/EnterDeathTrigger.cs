@@ -14,7 +14,7 @@ namespace DeathTrigger
         {
             if (other.gameObject.layer != PlayerLayer) return;
             if (other.TryGetComponent(out IDeathEvent deathEvent)) deathEvent.TriggerDeathEvent();
-            else Debug.LogError(other.name + " dos not hav a 'IDeathEvent' on it");
+            else Debug.LogWarning(other.name + " dos not hav a 'IDeathEvent' on it");
         }
     }
 }

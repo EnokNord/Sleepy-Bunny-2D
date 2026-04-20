@@ -6085,9 +6085,9 @@ GameObject:
   - component: {fileID: 1970039065}
   - component: {fileID: 1970039067}
   - component: {fileID: 1970039066}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: scarf_pile_0 (8)
-  m_TagString: Untagged
+  m_TagString: Climbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

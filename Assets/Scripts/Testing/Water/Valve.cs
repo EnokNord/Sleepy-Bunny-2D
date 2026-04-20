@@ -14,7 +14,7 @@ public class Valve : MonoBehaviour
     public int MoveMuch;
     public float WaitBy;
 
-    private bool move = false;
+    //private bool move = false;
     private bool Stop = false;
 
 
@@ -22,7 +22,7 @@ public class Valve : MonoBehaviour
     {
         
             if (other.gameObject.layer != PlayerLayer) return;
-        move = true;
+        //move = true;
 
 
         StartCoroutine("Water");
@@ -30,12 +30,15 @@ public class Valve : MonoBehaviour
     IEnumerator Water()
     {
         if (Stop == false)
+        {
+            Stop = true;
             for (int i = 0; i < MoveMuch; i++)
             {
                 MoveableWater.transform.position = new Vector2(MoveableWater.transform.position.x, MoveableWater.transform.position.y + Moveby);
                 yield return new WaitForSeconds(WaitBy);
             }
-        Stop = true;
+            
+        }
        yield break;
     }
 

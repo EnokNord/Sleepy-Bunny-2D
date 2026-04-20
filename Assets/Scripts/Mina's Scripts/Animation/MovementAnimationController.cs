@@ -1,3 +1,4 @@
+using Animation.States;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -6,6 +7,7 @@ public class MovementAnimationController : MonoBehaviour
     [SerializeField]Animator animator;
     Rigidbody2D rb;
     bool alive = true;
+    bool landing;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -15,11 +17,13 @@ public class MovementAnimationController : MonoBehaviour
             if(alive && rb.linearVelocityY != 0)
             {
                 
-                if (Global.GlobalFunctionsLibrary.IsGrounded(rb, 1.5f))
+                if (Global.GlobalFunctionsLibrary.IsGrounded(rb))
                 {
                     UpdateAnimationState("OnGround", true);
                     UpdateAnimationState("IsFalling", false);
-                }
+                    UpdateAnimationState("Landing", true);
+                landing = true;
+            }
                 else
                 {
                      UpdateAnimationState("OnGround", false);
@@ -27,6 +31,16 @@ public class MovementAnimationController : MonoBehaviour
                 }
 
             }
+        if (landing)
+        {
+            AnimatorClipInfo[] animatorinfo = animator.GetCurrentAnimatorClipInfo(0);
+            if(animatorinfo[0].clip.name != "landing_right" && animatorinfo[0].clip.name != "fall_right")
+            {
+                UpdateAnimationState("Landing", false);
+                landing = false;
+            }
+        }
+        
     }
     public void UpdateDirectionalFacing(float moveDirection)
     {
@@ -39,9 +53,18 @@ public class MovementAnimationController : MonoBehaviour
             animator.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
+    public void PauseAnimations(bool pause)
+    {
+        if (pause) animator.speed = 0;
+        else animator.speed = 1;
+    }
     public void UpdateAnimationState(string animBool, bool newValue)
     {
         animator.SetBool(animBool, newValue);
+    }
+    public void UpdateAnimationState(string animFloat, float newValue)
+    {
+        animator.SetFloat(animFloat, newValue);
     }
     public void UpdateAnimationState(string trigger)
     {
@@ -49,7 +72,7 @@ public class MovementAnimationController : MonoBehaviour
     }
     public void TriggerDeathAnimation()
     {
-        animator.SetTrigger("Death");
+        UpdateAnimationState("Dead", true);
         alive = false;
     }
 }
