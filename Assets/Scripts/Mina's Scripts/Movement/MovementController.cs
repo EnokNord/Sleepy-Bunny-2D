@@ -40,6 +40,7 @@ public class MovementController : MonoBehaviour
     private bool isRunning = false;
     private Vector2 originalHitboxSize;
     private Vector2 originalHitboxOffset;
+    bool inWater = false;
 
     CapsuleCollider2D hitBoxCollider;
     private void Awake()
@@ -73,8 +74,8 @@ public class MovementController : MonoBehaviour
     }
     public void Jump()
     {
-        if (GlobalFunctionsLibrary.IsGrounded(rigidBody, 1, -1, Vector2.up * 1.5f)) return;
-        if (Climbing || GlobalFunctionsLibrary.IsGrounded(rigidBody))
+        if (GlobalFunctionsLibrary.IsGrounded(rigidBody, 1, -1, Vector2.up * 1.5f) && !inWater) return;
+        if (Climbing || GlobalFunctionsLibrary.IsGrounded(rigidBody) || inWater)
         {
             if (isRunning)
             {
@@ -127,6 +128,23 @@ public class MovementController : MonoBehaviour
         if (isRunning) moveState = MovementState.Run;
         if (isCrouching) moveState = MovementState.CrouchWalk;
         if (moveDirection == 0) moveState = MovementState.Idle;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        BuoyancyEffector2D buoyancy = collision.GetComponent<BuoyancyEffector2D>();
+        if (buoyancy)
+        {
+            inWater = false;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        BuoyancyEffector2D buoyancy = collision.GetComponent<BuoyancyEffector2D>();
+        if (buoyancy)
+        {
+            inWater = true;
+        }
     }
 
 }

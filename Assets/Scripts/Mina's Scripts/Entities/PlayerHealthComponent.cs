@@ -76,7 +76,6 @@ public class PlayerHealthComponent : HealthComponent
         BuoyancyEffector2D buoyancy = collision.GetComponent<BuoyancyEffector2D>();
         if (buoyancy)
         {
-            swimming = false;
             inWater = false;
         }
     }
