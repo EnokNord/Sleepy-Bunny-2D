@@ -2532,7 +2532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9022245665483932677, guid: b81de829ffe899646992e21cbaf302ed, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6224,6 +6224,10 @@ PrefabInstance:
     - target: {fileID: 2399662148234888613, guid: 8def76f39a7cd3041b26bd8389dc878c, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2477595217135098815, guid: 8def76f39a7cd3041b26bd8389dc878c, type: 3}
+      propertyPath: swimTimeTilDeath
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3741439219054386337, guid: 8def76f39a7cd3041b26bd8389dc878c, type: 3}
       propertyPath: pauseMenuCanvas
