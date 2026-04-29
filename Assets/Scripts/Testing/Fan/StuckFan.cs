@@ -12,7 +12,7 @@ public class StuckFan : MonoBehaviour
     [SerializeField] private float fanSpeed;
     [SerializeField] private float fanRange;
     [SerializeField] private bool onOff = true;
-    [SerializeField] private bool hitPlayer = false;
+    //[SerializeField] private bool hitPlayer = false;
     [SerializeField] private float distancePercentage;
 
     // here to fix the issue where when the player reaches the end it dosn't grab the player again.
@@ -37,7 +37,7 @@ public class StuckFan : MonoBehaviour
         if (workAroundTimer != 0) return;
         if (other.gameObject.layer != PlayerLayer) return;
         PlayerRigidbody = other.gameObject.GetComponent<Rigidbody2D>();
-        hitPlayer = true;
+        //hitPlayer = true;
 
         //Need this for the update
         player = other.gameObject;
@@ -54,7 +54,7 @@ public class StuckFan : MonoBehaviour
     {
         if (other.gameObject.layer != PlayerLayer) return;
         PlayerRigidbody = null;
-        hitPlayer = false;
+        //hitPlayer = false;
     }
 
     private void FixedUpdate()
@@ -76,7 +76,7 @@ public class StuckFan : MonoBehaviour
 
         if (distancePercentage > 1f)
         {
-            hitPlayer = false;
+            //hitPlayer = false;
             distancePercentage = 0f;
             workAroundTimer = 5f;
             //Gravitry scale is currently hard coded. 

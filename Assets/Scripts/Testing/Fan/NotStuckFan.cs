@@ -27,10 +27,10 @@ public class NotStuckFan : MonoBehaviour
     [SerializeField] private bool onOff = true;
     //public bool OnOff { get; private set; }
 
-    private bool up = false;
-    private bool down = false;
-    private bool left = false;
-    private bool right = false;
+    //private bool up = false;
+    //private bool down = false;
+    //private bool left = false;
+    //private bool right = false;
     
     public bool OnOff = true;
 

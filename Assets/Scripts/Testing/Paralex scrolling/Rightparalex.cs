@@ -92,7 +92,7 @@ public class RightParalex : MonoBehaviour
         // should not move in Y if back ground
         if (Background)
         {
-            Debug.Log("Work");
+            
             return;
         }
 
