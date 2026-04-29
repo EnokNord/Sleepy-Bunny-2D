@@ -38,7 +38,6 @@ public class PlayerHealthComponent : HealthComponent
         }
         if (swimming)
         {
-            Debug.Log(swimTimer);
             swimTimer -= Time.fixedDeltaTime;
             if(swimTimer <= 0)
             {
@@ -86,7 +85,6 @@ public class PlayerHealthComponent : HealthComponent
         BuoyancyEffector2D buoyancy = collision.GetComponent<BuoyancyEffector2D>();
         if (buoyancy)
         {
-            Debug.Log("Swimming");
             if(swimTimer == 0) swimTimer = swimTimeTilDeath;
             swimming = true;
             inWater = true;

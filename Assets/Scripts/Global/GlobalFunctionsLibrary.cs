@@ -8,10 +8,10 @@ namespace Global
     public static class GlobalFunctionsLibrary
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IsGrounded(Rigidbody2D rigidbody2D, float groundedDistance = 2f, float groundDirection = 1)
+        public static bool IsGrounded(Rigidbody2D rigidbody2D, float groundedDistance = 2f, float groundDirection = 1, Vector2 offset = default)
         {
             int[] groundLayerMasks = { GroundLayerMask, PushAndPullLayerMask };
-            Vector2 position = rigidbody2D.position;
+            Vector2 position = rigidbody2D.position + offset;
             RaycastHit2D returnValue = new();
             foreach (int groundLayerMask in groundLayerMasks)
             {
