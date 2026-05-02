@@ -2525,6 +2525,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scarf (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6465743728157939350, guid: 9186816b61486c34ea51a3b29975e8ce, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465743728157939350, guid: 9186816b61486c34ea51a3b29975e8ce, type: 3}
+      propertyPath: m_TagString
+      value: Climbable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8681073870131170983, guid: 9186816b61486c34ea51a3b29975e8ce, type: 3}
@@ -5716,6 +5724,10 @@ PrefabInstance:
     - target: {fileID: 6465743728157939350, guid: 9186816b61486c34ea51a3b29975e8ce, type: 3}
       propertyPath: m_Name
       value: Scarf (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465743728157939350, guid: 9186816b61486c34ea51a3b29975e8ce, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7005181678534165788, guid: 9186816b61486c34ea51a3b29975e8ce, type: 3}
       propertyPath: m_SortingOrder
@@ -14161,6 +14173,14 @@ PrefabInstance:
     - target: {fileID: 6465743728157939350, guid: 9186816b61486c34ea51a3b29975e8ce, type: 3}
       propertyPath: m_Name
       value: Scarf
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465743728157939350, guid: 9186816b61486c34ea51a3b29975e8ce, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465743728157939350, guid: 9186816b61486c34ea51a3b29975e8ce, type: 3}
+      propertyPath: m_TagString
+      value: Climbable
       objectReference: {fileID: 0}
     - target: {fileID: 7005181678534165788, guid: 9186816b61486c34ea51a3b29975e8ce, type: 3}
       propertyPath: m_SortingOrder
