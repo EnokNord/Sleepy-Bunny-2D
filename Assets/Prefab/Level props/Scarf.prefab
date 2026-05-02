@@ -281,9 +281,9 @@ GameObject:
   - component: {fileID: 624973356163583100}
   - component: {fileID: 5116007214384181211}
   - component: {fileID: 4845276027822707159}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Scarf
-  m_TagString: Untagged
+  m_TagString: Climbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
