@@ -4575,7 +4575,7 @@ Transform:
   m_GameObject: {fileID: 1239766434}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 89.9102, y: -97.0662, z: 0}
+  m_LocalPosition: {x: 85.60074, y: -97.82758, z: 0}
   m_LocalScale: {x: 23.25131, y: 16.355925, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8694,6 +8694,10 @@ PrefabInstance:
     - target: {fileID: 9022245665483932677, guid: b81de829ffe899646992e21cbaf302ed, type: 3}
       propertyPath: m_Name
       value: WATER
+      objectReference: {fileID: 0}
+    - target: {fileID: 9022245665483932677, guid: b81de829ffe899646992e21cbaf302ed, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
