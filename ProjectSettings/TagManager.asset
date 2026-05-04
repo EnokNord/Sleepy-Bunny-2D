@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Climbable
+  - Small Box
   layers:
   - Default
   - TransparentFX

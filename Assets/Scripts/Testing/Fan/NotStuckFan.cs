@@ -19,6 +19,8 @@ public class NotStuckFan : MonoBehaviour
     // The Layer the payer is on. Used for a hit check
     private const int PlayerLayer = 7;
 
+    private const string BoxTag = "Small Box";
+
     private GameObject[] Pushing;
 
     [SerializeField] private Directions fanDirection;
@@ -109,7 +111,7 @@ public class NotStuckFan : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.gameObject.layer != PlayerLayer && other.gameObject.name != "box_small") return;
+        if (other.gameObject.layer != PlayerLayer && other.gameObject.tag != BoxTag) return;
 
         if (other.gameObject.name == "sleepy-bunny-character-sheet") return;
 
@@ -119,7 +121,7 @@ public class NotStuckFan : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.layer != PlayerLayer && other.gameObject.name != "box_small") return;
+        if (other.gameObject.layer != PlayerLayer && other.gameObject.tag != BoxTag) return;
 
         PlayerRigidbody.Remove(other.gameObject.GetComponent<Rigidbody2D>());
 
