@@ -5084,7 +5084,7 @@ MonoBehaviour:
   m_LoopMode: 1
   m_Method: 0
   m_Duration: 30
-  m_MaxSpeed: 2.7866673
+  m_MaxSpeed: 2.2400005
   m_EasingMode: 0
   m_AlignmentMode: 0
   m_ObjectForwardAxis: 2
@@ -6092,7 +6092,7 @@ MonoBehaviour:
           z: 0
           w: 1
     - Position:
-        x: 20.399998
+        x: 12.199997
         y: 0.019999504
         z: 0
       TangentIn:
