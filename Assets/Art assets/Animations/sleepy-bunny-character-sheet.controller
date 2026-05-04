@@ -195,6 +195,32 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1102 &-7615110802283751876
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: new_climb_end_right
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: a8e89fa95a72f2c41bf636f1bd73457e, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &-7560084613716471977
 AnimatorState:
   serializedVersion: 6
@@ -731,6 +757,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5695495722c4e584c8596410f5f3a0bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animation.JumpingAnimation
+--- !u!1102 &-2841662798649624651
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: new_climb_start_right
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 3100f8cf394e28d489c4bba682814659, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!114 &-2592981234053332606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -948,6 +1000,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed9fcda7796a40e4d904ce452fd47362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animation.States.CrouchRunningAnimation
+--- !u!1102 &-275880336146301786
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: new_climb_start_left
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 67449f375d35cca4bacc84d2bdcce2d0, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1101 &-97965561933279348
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1290,6 +1368,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 032df1d5ab6c34646853ab42e31fdc27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!1102 &1096037920236881234
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: new_climb_end_left
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 864f1a92ec02a2446ab2018814065d93, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &1162228309909178173
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: new_climb
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 7b0de11bf08992b4ab16bb91457d75f4, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &1187272647152598253
 AnimatorState:
   serializedVersion: 6
@@ -2153,6 +2283,21 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 8197342187022409656}
     m_Position: {x: 0, y: -860, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1096037920236881234}
+    m_Position: {x: 20, y: -1160, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -7615110802283751876}
+    m_Position: {x: 20, y: -1120, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1162228309909178173}
+    m_Position: {x: 130, y: -1200, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -275880336146301786}
+    m_Position: {x: 220, y: -1160, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -2841662798649624651}
+    m_Position: {x: 220, y: -1120, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -4744120203138866089}
