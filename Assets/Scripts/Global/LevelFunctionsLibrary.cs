@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
+
 
 namespace LevelFunctionsLibrary
 {
     public class LevelFunctions : MonoBehaviour
     {
+        public static UnityEvent<bool> togglePause = new UnityEvent<bool>();
         public static void ResetCurrentLevel()
         {
             Time.timeScale = 1.0f;
@@ -26,6 +29,7 @@ namespace LevelFunctionsLibrary
         {
             if (paused) Time.timeScale = 0;
             else Time.timeScale = 1;
+            togglePause.Invoke(paused);
         }
         public static void QuitGame()
         {

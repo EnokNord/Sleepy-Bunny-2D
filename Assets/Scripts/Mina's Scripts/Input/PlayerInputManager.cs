@@ -18,6 +18,7 @@ public class PlayerInputManager : MonoBehaviour
     ClimbingController climbingController;
     ObjectMovingComponent objectMovingComponent;
     PlayerInputController inputControls;
+    PlayerInputController pauseInputControls;
 
     private void Awake()
     {
@@ -27,8 +28,16 @@ public class PlayerInputManager : MonoBehaviour
         inputControls = new PlayerInputController();
         playerMap.Enable();
         SetupInputBindings();
+        LevelFunctionsLibrary.LevelFunctions.togglePause.AddListener(PauseInput);
     }
     private void OnDisable()
+    {
+
+        RemoveInputBindings();
+       
+        playerMap.Disable();
+    }
+    private void RemoveInputBindings()
     {
         playerMap.Walk.performed -= SetWalkDirection;
         playerMap.Walk.canceled -= StopWalk;
@@ -50,8 +59,6 @@ public class PlayerInputManager : MonoBehaviour
 
         playerMap.Climb.performed -= Climb;
         playerMap.Climb.canceled -= StopMidClimb;
-
-        playerMap.Disable();
     }
     private void SetupInputBindings()
     {
@@ -95,6 +102,19 @@ public class PlayerInputManager : MonoBehaviour
     {
         objectMovingComponent.ReleaseObject();
     }
+    void PauseInput(bool paused)
+    {
+        if (paused)
+        {
+            RemoveInputBindings();
+            playerMap.Pause.performed += TogglePauseMenu;
+        }
+        else
+        {
+            playerMap.Pause.performed -= TogglePauseMenu;
+            SetupInputBindings();
+        }
+    }
     public void TogglePauseMenu(CallbackContext callbackContext)
     {
         if (pauseMenuCanvas == null) return;
@@ -102,13 +122,11 @@ public class PlayerInputManager : MonoBehaviour
         {
             pauseMenuCanvas.SetActive(false);
             LevelFunctionsLibrary.LevelFunctions.ToggleGamePause(false);
-            EnableInput();
         }
         else
         {
             pauseMenuCanvas.SetActive(true);
             LevelFunctionsLibrary.LevelFunctions.ToggleGamePause(true);
-            DisableInput();
         }
     }
 
