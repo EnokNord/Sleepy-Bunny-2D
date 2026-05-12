@@ -12,7 +12,7 @@ public class ClimbingController : MonoBehaviour
     float gravity;
     private MovementAnimationController animationController;
     bool climbing;
-    const float climbCooldown = .75f;
+    const float climbCooldown = .5f;
     float climCooldownTimer = 0;
 
     private void Awake()
