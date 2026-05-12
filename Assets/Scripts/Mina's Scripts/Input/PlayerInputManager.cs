@@ -102,11 +102,13 @@ public class PlayerInputManager : MonoBehaviour
         {
             pauseMenuCanvas.SetActive(false);
             LevelFunctionsLibrary.LevelFunctions.ToggleGamePause(false);
+            EnableInput();
         }
         else
         {
             pauseMenuCanvas.SetActive(true);
             LevelFunctionsLibrary.LevelFunctions.ToggleGamePause(true);
+            DisableInput();
         }
     }
 

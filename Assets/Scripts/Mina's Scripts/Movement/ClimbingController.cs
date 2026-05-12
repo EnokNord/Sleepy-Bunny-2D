@@ -12,6 +12,8 @@ public class ClimbingController : MonoBehaviour
     float gravity;
     private MovementAnimationController animationController;
     bool climbing;
+    const float climbCooldown = .5f;
+    float climCooldownTimer = 0;
 
     private void Awake()
     {
@@ -22,12 +24,13 @@ public class ClimbingController : MonoBehaviour
     }
     private void Update()
     {
+        if(climCooldownTimer > 0) climCooldownTimer -= Time.deltaTime;
         if (climbableObject == null || climbDir == 0) return;
         transform.Translate(Vector3.up * climbDir * climbSpeed * Time.deltaTime);
     }
     public void TryClimb(float _climbDir)
     {
-        if (climbableObject == null) return;
+        if (climbableObject == null || climCooldownTimer > 0) return;
         rb.linearVelocityY = 0;
         rb.linearVelocityX = 0;
         rb.gravityScale = 0;
@@ -55,8 +58,10 @@ public class ClimbingController : MonoBehaviour
     }
     public void StopClimbing()
     {
+        if (!climbing) return;
         rb.gravityScale = gravity;
         climbDir = 0;
+        climCooldownTimer = climbCooldown;
         movementController.Climbing = false;
         animationController.PauseAnimations(false);
         animationController.UpdateAnimationState("IsMovingUpOrDown", false);
