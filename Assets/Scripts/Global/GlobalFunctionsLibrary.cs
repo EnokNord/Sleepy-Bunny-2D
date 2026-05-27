@@ -46,7 +46,7 @@ namespace Global
         }
 
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [System.Obsolete("This is an obsolete method")]
         public static void UpdatePlayerAnimationsDirection()
         {
             switch (PlayerMoveDirection)

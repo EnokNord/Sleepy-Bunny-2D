@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7009671467878347142}
   - component: {fileID: 5606669555110655039}
   - component: {fileID: 8981360757627837100}
+  - component: {fileID: 3401705191526575610}
   m_Layer: 6
   m_Name: box_small
   m_TagString: Small Box
@@ -165,3 +166,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &3401705191526575610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6118013124900638494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 228e18f056a24f74e9b53300780b3947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoxController
+  boxLayer:
+    serializedVersion: 2
+    m_Bits: 64

@@ -71,6 +71,14 @@ public class ObjectMovingComponent : MonoBehaviour
         movementController.CurrentWalkSpeed = movementController.WalkSpeed * Mathf.Clamp(1 - (0.2f * Mathf.RoundToInt(interactableRB.mass * 0.01f)), 0, 1);
         interactableRB.transform.parent = transform;
         interactableRB.constraints = RigidbodyConstraints2D.FreezeRotation;
+        
+        BoxController box = interactableRB.GetComponent<BoxController>();
+        if (box)
+        {
+            box.BottomBox = true;
+            box.OnGrab();
+        }
+       
         grabbing = true;
         movementController.AnimationController.UpdateAnimationState("IsPushing", true);
         movementController.LockDirection = true;
@@ -80,7 +88,11 @@ public class ObjectMovingComponent : MonoBehaviour
         if (interactableRB == null) return;
         movementController.AnimationController.UpdateAnimationState("IsPulling", false);
         movementController.AnimationController.UpdateAnimationState("IsPushing", false);
-        if(Global.GlobalFunctionsLibrary.IsGrounded(interactableRB)) interactableRB.constraints = RigidbodyConstraints2D.FreezeAll;
+
+        BoxController box = interactableRB.GetComponent<BoxController>();
+        if (box) box.OnRelease();
+
+        if (Global.GlobalFunctionsLibrary.IsGrounded(interactableRB)) interactableRB.constraints = RigidbodyConstraints2D.FreezeAll;
         interactableRB.transform.parent = null;
         movementController.CurrentWalkSpeed = movementController.WalkSpeed;
         movementController.LockDirection = false;
