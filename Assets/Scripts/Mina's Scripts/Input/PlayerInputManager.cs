@@ -3,6 +3,9 @@ using Input;
 using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Users;
+using UnityEngine.UI;
 using static Player.Movement.ForceAccumulate;
 using static UnityEngine.InputSystem.InputAction;
 [RequireComponent(typeof(MovementController))]
@@ -13,12 +16,12 @@ public class PlayerInputManager : MonoBehaviour
 {
     public PlayerInputController.PlayerActions playerMap => inputControls.Player;
     [SerializeField] GameObject pauseMenuCanvas;
+    [SerializeField] GameObject interactKeyPrompt;
     
     MovementController playerMovementController;
     ClimbingController climbingController;
     ObjectMovingComponent objectMovingComponent;
     PlayerInputController inputControls;
-    PlayerInputController pauseInputControls;
 
     private void Awake()
     {
@@ -26,11 +29,14 @@ public class PlayerInputManager : MonoBehaviour
         objectMovingComponent = GetComponent<ObjectMovingComponent>();
         climbingController = GetComponent<ClimbingController>();
         inputControls = new PlayerInputController();
+        
         playerMap.Enable();
+        
         SetupInputBindings();
         LevelFunctionsLibrary.LevelFunctions.togglePause.AddListener(PauseInput);
     }
-    private void OnDisable()
+    
+        private void OnDisable()
     {
 
         RemoveInputBindings();
@@ -62,6 +68,7 @@ public class PlayerInputManager : MonoBehaviour
     }
     private void SetupInputBindings()
     {
+
         playerMap.Walk.performed += SetWalkDirection;
         playerMap.Walk.canceled += StopWalk;
 
@@ -82,6 +89,7 @@ public class PlayerInputManager : MonoBehaviour
 
         playerMap.Climb.performed += Climb;
         playerMap.Climb.canceled += StopMidClimb;
+        
     }
     private void SetWalkDirection(CallbackContext callbackContext) => playerMovementController.SetWalkDirection(callbackContext.ReadValue<float>());
     private void StopWalk(CallbackContext callbackContext) => playerMovementController.SetWalkDirection(0);
@@ -104,6 +112,8 @@ public class PlayerInputManager : MonoBehaviour
     }
     void PauseInput(bool paused)
     {
+       
+        
         if (paused)
         {
             RemoveInputBindings();
@@ -126,6 +136,7 @@ public class PlayerInputManager : MonoBehaviour
         else
         {
             pauseMenuCanvas.SetActive(true);
+            
             LevelFunctionsLibrary.LevelFunctions.ToggleGamePause(true);
         }
     }
