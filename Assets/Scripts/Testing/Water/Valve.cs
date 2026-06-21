@@ -11,12 +11,17 @@ public class Valve : MonoBehaviour
 
     public float Moveby;
 
-    public int MoveMuch;
+    public float MoveMuch;
     public float WaitBy;
+    private float targetHight;
 
     //private bool move = false;
-    private bool Stop = false;
+    private bool Stop = true;
 
+    private void Awake()
+    {
+        targetHight = MoveableWater.transform.position.y + MoveMuch;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -24,22 +29,18 @@ public class Valve : MonoBehaviour
             if (other.gameObject.layer != PlayerLayer) return;
         //move = true;
 
-
-        StartCoroutine("Water");
+            Stop = false;
+        
     }
-    IEnumerator Water()
+
+    private void Update()
     {
-        if (Stop == false)
-        {
-            Stop = true;
-            for (int i = 0; i < MoveMuch; i++)
-            {
-                MoveableWater.transform.position = new Vector2(MoveableWater.transform.position.x, MoveableWater.transform.position.y + Moveby);
-                yield return new WaitForSeconds(WaitBy);
-            }
-            
-        }
-       yield break;
+
+        if (Stop) return;
+
+        if(MoveableWater.transform.position.y < targetHight)
+            MoveableWater.transform.position = new Vector2(MoveableWater.transform.position.x, MoveableWater.transform.position.y + Moveby * Time.deltaTime);           
+        
     }
 
 }
