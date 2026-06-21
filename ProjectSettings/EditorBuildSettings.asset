@@ -42,6 +42,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Worlds/World 2/W2 Level 4.unity
     guid: 8328c8466cfb76b4aadf84df1ae7880b
   - enabled: 1
+    path: Assets/Scenes/Worlds/World 2/W2 Final Level.unity
+    guid: c028b56e7b8c1e942a7ac4817702ac1b
+  - enabled: 1
     path: Assets/Scenes/Worlds/World 3/World 3 level 1.unity
     guid: 1ed779753e061d345a0cfd795881f2fe
   - enabled: 1
