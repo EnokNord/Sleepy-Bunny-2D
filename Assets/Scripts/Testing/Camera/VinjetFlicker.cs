@@ -30,7 +30,9 @@ public class VinjetFlicker : MonoBehaviour
 
             if (CurrentSprite == flickerStates.Length)
             {
-                
+
+                //Debug.Log(flickerStates.Length + "crurrent Sprite");
+
                 CurrentSprite = 0;
                 return;
             }
