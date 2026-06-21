@@ -8,13 +8,13 @@ public class VinjetFlicker : MonoBehaviour
     // [SerializeField] GameObject[] Cinemachine; No clue how to fix that ask mina perhaps?
     private Sprite newState;
 
-    [SerializeField] int flickerSpeed;
+    [SerializeField] float flickerSpeed;
 
-    
+    public bool IsEyey = false;
 
     private int CurrentSprite;
 
-    private int flickerTime;
+    private float flickerTime;
 
     private void Start()
     {
@@ -28,11 +28,15 @@ public class VinjetFlicker : MonoBehaviour
         if(flickerTime <= 0)
         {
 
-            if (CurrentSprite == 2)
+            if (CurrentSprite == flickerStates.Length)
             {
-                Debug.Log(flickerStates.Length + "crurrent Sprite");
+                
                 CurrentSprite = 0;
                 return;
+            }
+            if(IsEyey)
+            {
+                flickerTime = Random.Range(0.5f, 2);
             }
             flickerTime = flickerSpeed;
 
@@ -44,7 +48,7 @@ public class VinjetFlicker : MonoBehaviour
             return;
         }
 
-        flickerTime--;
+        flickerTime -= Time.deltaTime;
         
     }
 }
