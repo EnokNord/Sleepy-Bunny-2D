@@ -74,7 +74,7 @@ public class MovementController : MonoBehaviour
     }
     public void Jump()
     {
-        if (GlobalFunctionsLibrary.IsGrounded(rigidBody, 1, -1, Vector2.up * 1.5f) && !inWater) return;
+        if (GlobalFunctionsLibrary.IsGrounded(rigidBody, 1, -1) && !inWater) return;
         if (Climbing || GlobalFunctionsLibrary.IsGrounded(rigidBody) || inWater)
         {
             if (isRunning)
@@ -104,7 +104,7 @@ public class MovementController : MonoBehaviour
     }
     public bool ToggleCrouch(bool isNowCrouching)
     {
-        if (!isNowCrouching && GlobalFunctionsLibrary.IsGrounded(rigidBody, 1, -1, Vector2.up * 1.5f)) { checkForUncrouch = true; return false; }
+        if (!isNowCrouching && GlobalFunctionsLibrary.IsGrounded(rigidBody, 1, -1)) { checkForUncrouch = true; return false; }
         isCrouching = isNowCrouching;
         checkForUncrouch = false;
         if (isCrouching)
