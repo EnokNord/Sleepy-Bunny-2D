@@ -1439,6 +1439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputManager
   pauseMenuCanvas: {fileID: 0}
+  interactKeyPrompt: {fileID: 0}
 --- !u!114 &5727871360423219487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1533,7 +1534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealthComponent
   deathHeight: 30
   impactVelocityThreshold: 40
-  swimTimeTilDeath: 10
+  swimTimeTilDeath: 3
 --- !u!1 &4145599745968323594
 GameObject:
   m_ObjectHideFlags: 0
