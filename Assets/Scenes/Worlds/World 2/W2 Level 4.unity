@@ -1294,7 +1294,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4135713821579784003, guid: ea545f847d8544d4cad9c6dec3abf57b, type: 3}
       propertyPath: Moveby
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4135713821579784003, guid: ea545f847d8544d4cad9c6dec3abf57b, type: 3}
       propertyPath: WaitBy
@@ -1302,7 +1302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4135713821579784003, guid: ea545f847d8544d4cad9c6dec3abf57b, type: 3}
       propertyPath: MoveMuch
-      value: 25
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4135713821579784003, guid: ea545f847d8544d4cad9c6dec3abf57b, type: 3}
       propertyPath: MoveableWater
@@ -6103,6 +6103,10 @@ PrefabInstance:
     - target: {fileID: 3964589940882011420, guid: b81de829ffe899646992e21cbaf302ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124880786561357786, guid: b81de829ffe899646992e21cbaf302ed, type: 3}
+      propertyPath: m_SurfaceLevel
+      value: 0.47
       objectReference: {fileID: 0}
     - target: {fileID: 9022245665483932677, guid: b81de829ffe899646992e21cbaf302ed, type: 3}
       propertyPath: m_Name
@@ -11028,7 +11032,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4135713821579784003, guid: ea545f847d8544d4cad9c6dec3abf57b, type: 3}
       propertyPath: Moveby
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4135713821579784003, guid: ea545f847d8544d4cad9c6dec3abf57b, type: 3}
       propertyPath: WaitBy
@@ -11036,7 +11040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4135713821579784003, guid: ea545f847d8544d4cad9c6dec3abf57b, type: 3}
       propertyPath: MoveMuch
-      value: 100
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4135713821579784003, guid: ea545f847d8544d4cad9c6dec3abf57b, type: 3}
       propertyPath: MoveableWater
