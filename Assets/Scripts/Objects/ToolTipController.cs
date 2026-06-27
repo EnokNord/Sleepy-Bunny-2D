@@ -12,17 +12,20 @@ enum ToolTipType
 [RequireComponent(typeof(BoxCollider2D))]
 public class ToolTipController : MonoBehaviour
 {
+    // TODO: Fix the getcomponent in children
+    public bool UsingImages { get { return usingImages; }  }
+
     [SerializeField] ToolTipType toolTipType;
     [SerializeField] GameObject tooltipTextObject;
     [SerializeField] bool startsDisabled = false;
 
     [SerializeField] string keyboardText;
     [SerializeField] string controllerText;
+    [SerializeField] bool usingImages;
 
     [SerializeField] Sprite keyboardTextAsImage;
     [SerializeField] Sprite controllerTextAsImage;
     TextMeshPro tooltipText;
-    bool usingImages;
     SpriteRenderer tooltipImage;
     bool isKeyboardAndMouse;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
