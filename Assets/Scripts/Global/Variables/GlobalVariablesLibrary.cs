@@ -4,6 +4,7 @@ using static Global.GlobalEnumLibrary;
 
 namespace Global
 {
+    // TODO: Make into scriptable object
     public static class GlobalVariablesLibrary
     {
         #region Player

@@ -6460,10 +6460,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 294173823714674174, guid: fd2a0b6a4dc68554387ef8678388f006, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd2a0b6a4dc68554387ef8678388f006, type: 3}
 --- !u!1001 &1234021294
 PrefabInstance:
@@ -7119,6 +7116,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 148735325005898255, guid: fd2a0b6a4dc68554387ef8678388f006, type: 3}
+      propertyPath: usingImages
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 148735325005898255, guid: fd2a0b6a4dc68554387ef8678388f006, type: 3}
       propertyPath: keyboardText
       value: Use the A and D keys to move around
       objectReference: {fileID: 0}
@@ -7126,6 +7127,14 @@ PrefabInstance:
       propertyPath: controllerText
       value: Use the Left stick on the controller to move around
       objectReference: {fileID: 0}
+    - target: {fileID: 148735325005898255, guid: fd2a0b6a4dc68554387ef8678388f006, type: 3}
+      propertyPath: keyboardTextAsImage
+      value: 
+      objectReference: {fileID: -5864841094055808416, guid: 426db3d198f14184a9a54dc210ce2b23, type: 3}
+    - target: {fileID: 148735325005898255, guid: fd2a0b6a4dc68554387ef8678388f006, type: 3}
+      propertyPath: controllerTextAsImage
+      value: 
+      objectReference: {fileID: 5843985864524226762, guid: 01a2bb0d19995bb4f8d7d07fc646c7ea, type: 3}
     - target: {fileID: 229342970886828484, guid: fd2a0b6a4dc68554387ef8678388f006, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.47
@@ -7218,6 +7227,30 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4278190080
       objectReference: {fileID: 0}
+    - target: {fileID: 5687664938324881189, guid: fd2a0b6a4dc68554387ef8678388f006, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228334709233302925, guid: fd2a0b6a4dc68554387ef8678388f006, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228334709233302925, guid: fd2a0b6a4dc68554387ef8678388f006, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228334709233302925, guid: fd2a0b6a4dc68554387ef8678388f006, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7228334709233302925, guid: fd2a0b6a4dc68554387ef8678388f006, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00000047683716
+      objectReference: {fileID: 0}
+    - target: {fileID: 8818337129507627105, guid: fd2a0b6a4dc68554387ef8678388f006, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5864841094055808416, guid: 426db3d198f14184a9a54dc210ce2b23, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8370,7 +8403,7 @@ Transform:
   m_GameObject: {fileID: 1586598432}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.0300093, y: 18.61, z: 0}
+  m_LocalPosition: {x: 6.03, y: 18.61, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10466,10 +10499,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 294173823714674174, guid: fd2a0b6a4dc68554387ef8678388f006, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd2a0b6a4dc68554387ef8678388f006, type: 3}
 --- !u!1001 &1841666128
 PrefabInstance:
