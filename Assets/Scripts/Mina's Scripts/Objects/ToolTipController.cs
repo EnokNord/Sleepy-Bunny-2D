@@ -18,12 +18,19 @@ public class ToolTipController : MonoBehaviour
 
     [SerializeField] string keyboardText;
     [SerializeField] string controllerText;
+
+    [SerializeField] Sprite keyboardTextAsImage;
+    [SerializeField] Sprite controllerTextAsImage;
     TextMeshPro tooltipText;
+    bool usingImages;
+    SpriteRenderer tooltipImage;
     bool isKeyboardAndMouse;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         tooltipText = tooltipTextObject.GetComponent<TextMeshPro>();
+        tooltipImage = tooltipTextObject.GetComponent<SpriteRenderer>();
+        if (tooltipImage) usingImages = true;
         InputSystem.onActionChange += InputActionChangeCallback;
     }
     private void OnDisable()
@@ -39,8 +46,17 @@ public class ToolTipController : MonoBehaviour
             InputDevice lastDevice = receivedInputAction.activeControl.device;
             if (lastDevice.name.Equals("Mouse") || receivedInputAction.name == "Navigate" || receivedInputAction.name == "Look") return;
             isKeyboardAndMouse = lastDevice.name.Equals("Keyboard");
-            if(isKeyboardAndMouse && tooltipText.text != keyboardText) tooltipText.text = keyboardText;
-            if(!isKeyboardAndMouse && tooltipText.text != controllerText) tooltipText.text = controllerText;
+            if (usingImages)
+            {
+                if (isKeyboardAndMouse && tooltipImage.sprite != keyboardTextAsImage) tooltipImage.sprite = keyboardTextAsImage;
+                if (!isKeyboardAndMouse && tooltipImage.sprite != controllerTextAsImage) tooltipImage.sprite = controllerTextAsImage;
+            }
+            else
+            {
+                if (isKeyboardAndMouse && tooltipText.text != keyboardText) tooltipText.text = keyboardText;
+                if (!isKeyboardAndMouse && tooltipText.text != controllerText) tooltipText.text = controllerText;
+            }
+           
         }
     }
        

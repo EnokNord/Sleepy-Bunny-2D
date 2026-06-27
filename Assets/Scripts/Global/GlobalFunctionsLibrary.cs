@@ -21,7 +21,7 @@ namespace Global
             }
             #if UNITY_EDITOR 
             if (returnValue.transform is not null) 
-                Debug.DrawLine(position, new Vector2(position.x ,position.y + Vector2.down.y * groundedDistance), Color.black, 1000);
+                Debug.DrawLine(position, new Vector2(position.x ,position.y + Vector2.down.y* groundDirection * groundedDistance), Color.black, 1000);
             #endif 
             return returnValue.transform is not null;
         }
