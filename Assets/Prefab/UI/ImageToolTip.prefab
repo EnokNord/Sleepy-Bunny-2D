@@ -300,6 +300,7 @@ MonoBehaviour:
   startsDisabled: 0
   keyboardText: 
   controllerText: 
+  usingImages: 0
   keyboardTextAsImage: {fileID: 0}
   controllerTextAsImage: {fileID: 0}
 --- !u!1 &7409010691333244035
