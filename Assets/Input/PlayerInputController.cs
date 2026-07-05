@@ -605,6 +605,24 @@ namespace Input
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Horizontal"",
+                    ""type"": ""Value"",
+                    ""id"": ""14afa45c-bb62-4c29-8e22-877b62cc785e"",
+                    ""expectedControlType"": ""Integer"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Vertical"",
+                    ""type"": ""Value"",
+                    ""id"": ""1829df68-8a34-457d-addf-740d88e9af98"",
+                    ""expectedControlType"": ""Integer"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -618,6 +636,138 @@ namespace Input
                     ""action"": ""Down"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""61e9fd5f-1807-4f8a-9758-7c1cd2dd08fa"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""69b16cac-9406-443c-a1a2-c2792cae686c"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""9ab47bc7-6ff2-436f-8672-2ea840fc8018"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""acb8db21-2c56-4648-be97-3c0605df1f23"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""c01d364f-6884-4d8a-87bd-37fa092bc31f"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""454f1c12-1714-4f6e-b738-5024e0c29c68"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""8191e668-ce43-4a54-9268-6a0b1c78dbfc"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Vertical"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""032b7238-522e-43a8-9458-7a340c0666a4"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Vertical"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""6ede72f0-0d9d-4a79-80ce-5ed556b36668"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Vertical"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""1684d364-2f94-4426-a316-aa78fceee4b8"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Vertical"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""fa4f2f21-70c4-44a8-90bb-7649e77419ea"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Vertical"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""2a27cb7a-7f41-4195-a618-23a065d7495e"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Vertical"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -673,6 +823,8 @@ namespace Input
             m_Camera_right = m_Camera.FindAction("right", throwIfNotFound: true);
             m_Camera_left = m_Camera.FindAction("left", throwIfNotFound: true);
             m_Camera_up = m_Camera.FindAction("up", throwIfNotFound: true);
+            m_Camera_Horizontal = m_Camera.FindAction("Horizontal", throwIfNotFound: true);
+            m_Camera_Vertical = m_Camera.FindAction("Vertical", throwIfNotFound: true);
         }
 
         ~@PlayerInputController()
@@ -931,6 +1083,8 @@ namespace Input
         private readonly InputAction m_Camera_right;
         private readonly InputAction m_Camera_left;
         private readonly InputAction m_Camera_up;
+        private readonly InputAction m_Camera_Horizontal;
+        private readonly InputAction m_Camera_Vertical;
         /// <summary>
         /// Provides access to input actions defined in input action map "Camera".
         /// </summary>
@@ -958,6 +1112,14 @@ namespace Input
             /// Provides access to the underlying input action "Camera/up".
             /// </summary>
             public InputAction @up => m_Wrapper.m_Camera_up;
+            /// <summary>
+            /// Provides access to the underlying input action "Camera/Horizontal".
+            /// </summary>
+            public InputAction @Horizontal => m_Wrapper.m_Camera_Horizontal;
+            /// <summary>
+            /// Provides access to the underlying input action "Camera/Vertical".
+            /// </summary>
+            public InputAction @Vertical => m_Wrapper.m_Camera_Vertical;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -996,6 +1158,12 @@ namespace Input
                 @up.started += instance.OnUp;
                 @up.performed += instance.OnUp;
                 @up.canceled += instance.OnUp;
+                @Horizontal.started += instance.OnHorizontal;
+                @Horizontal.performed += instance.OnHorizontal;
+                @Horizontal.canceled += instance.OnHorizontal;
+                @Vertical.started += instance.OnVertical;
+                @Vertical.performed += instance.OnVertical;
+                @Vertical.canceled += instance.OnVertical;
             }
 
             /// <summary>
@@ -1019,6 +1187,12 @@ namespace Input
                 @up.started -= instance.OnUp;
                 @up.performed -= instance.OnUp;
                 @up.canceled -= instance.OnUp;
+                @Horizontal.started -= instance.OnHorizontal;
+                @Horizontal.performed -= instance.OnHorizontal;
+                @Horizontal.canceled -= instance.OnHorizontal;
+                @Vertical.started -= instance.OnVertical;
+                @Vertical.performed -= instance.OnVertical;
+                @Vertical.canceled -= instance.OnVertical;
             }
 
             /// <summary>
@@ -1151,6 +1325,20 @@ namespace Input
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnUp(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Horizontal" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnHorizontal(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Vertical" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnVertical(InputAction.CallbackContext context);
         }
     }
 }

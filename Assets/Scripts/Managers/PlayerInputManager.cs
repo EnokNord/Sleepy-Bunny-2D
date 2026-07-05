@@ -12,9 +12,11 @@ using static UnityEngine.InputSystem.InputAction;
 [RequireComponent(typeof(ObjectMovingComponent))]
 [RequireComponent(typeof(ClimbingController))]
 [RequireComponent(typeof(PlayerHealthComponent))]
+[RequireComponent(typeof(PlayerCameraController))]
 public class PlayerInputManager : MonoBehaviour
 {
     public PlayerInputController.PlayerActions playerMap => inputControls.Player;
+    public PlayerInputController.CameraActions cameraMap => inputControls.Camera;
     [SerializeField] GameObject pauseMenuCanvas;
     [SerializeField] GameObject interactKeyPrompt;
     
@@ -22,16 +24,20 @@ public class PlayerInputManager : MonoBehaviour
     ClimbingController climbingController;
     ObjectMovingComponent objectMovingComponent;
     PlayerInputController inputControls;
+    PlayerCameraController cameraController;
 
     private void Awake()
     {
         playerMovementController = GetComponent<MovementController>();
         objectMovingComponent = GetComponent<ObjectMovingComponent>();
         climbingController = GetComponent<ClimbingController>();
+        cameraController = GetComponent<PlayerCameraController>();
         inputControls = new PlayerInputController();
         
         playerMap.Enable();
-        
+        cameraMap.Enable();
+
+
         SetupInputBindings();
         LevelFunctionsLibrary.LevelFunctions.togglePause.AddListener(PauseInput);
     }
@@ -42,9 +48,11 @@ public class PlayerInputManager : MonoBehaviour
         RemoveInputBindings();
        
         playerMap.Disable();
+        cameraMap.Disable();
     }
     private void RemoveInputBindings()
     {
+        #region Player Character movement
         playerMap.Walk.performed -= SetWalkDirection;
         playerMap.Walk.canceled -= StopWalk;
 
@@ -61,14 +69,26 @@ public class PlayerInputManager : MonoBehaviour
         playerMap.Interact.performed -= InteractPressed;
         playerMap.Interact.canceled -= InteractReleased;
 
-        playerMap.Pause.performed -= TogglePauseMenu;
-
         playerMap.Climb.performed -= Climb;
         playerMap.Climb.canceled -= StopMidClimb;
+        #endregion
+        #region Camera controls
+        cameraMap.Horizontal.performed -= SetCameraHorizontalDirection;
+        cameraMap.Horizontal.canceled -= ResetCameraHorizontalDirection;
+
+        cameraMap.Vertical.performed -= SetCameraVerticalDirection;
+        cameraMap.Vertical.canceled -= ResetCameraVerticalDirection;
+
+        playerMap.Walk.performed -= ResetCamera;
+        playerMap.Jump.performed -= ResetCamera;
+        playerMap.Crouch.performed -= ResetCamera;
+        playerMap.Climb.performed -= ResetCamera;
+        #endregion
+        playerMap.Pause.performed -= TogglePauseMenu;
     }
     private void SetupInputBindings()
     {
-
+        #region Player character movement
         playerMap.Walk.performed += SetWalkDirection;
         playerMap.Walk.canceled += StopWalk;
 
@@ -85,12 +105,25 @@ public class PlayerInputManager : MonoBehaviour
         playerMap.Interact.performed += InteractPressed;
         playerMap.Interact.canceled += InteractReleased;
 
-        playerMap.Pause.performed += TogglePauseMenu;
 
         playerMap.Climb.performed += Climb;
         playerMap.Climb.canceled += StopMidClimb;
+        #endregion
+        #region Camera controls
+        cameraMap.Horizontal.performed += SetCameraHorizontalDirection;
+        cameraMap.Horizontal.canceled += ResetCameraHorizontalDirection;
         
+        cameraMap.Vertical.performed += SetCameraVerticalDirection;
+        cameraMap.Vertical.canceled += ResetCameraVerticalDirection;
+
+        playerMap.Walk.performed += ResetCamera;
+        playerMap.Jump.performed += ResetCamera;
+        playerMap.Crouch.performed += ResetCamera;
+        playerMap.Climb.performed += ResetCamera;
+        #endregion
+        playerMap.Pause.performed += TogglePauseMenu;
     }
+    #region Player movement bindings
     private void SetWalkDirection(CallbackContext callbackContext) => playerMovementController.SetWalkDirection(callbackContext.ReadValue<float>());
     private void StopWalk(CallbackContext callbackContext) => playerMovementController.SetWalkDirection(0);
     private void ToggleRunning(CallbackContext callbackContext) => playerMovementController.ToggleRunning(true);
@@ -101,6 +134,15 @@ public class PlayerInputManager : MonoBehaviour
     private void Climb(CallbackContext callbackContext) => climbingController.TryClimb(callbackContext.ReadValue<float>());
     private void StopMidClimb(CallbackContext callbackContext) => climbingController.TryClimb(0);
     private void StopClimb(CallbackContext callbackContext) => climbingController.StopClimbing();
+    #endregion
+    #region Camera bindings
+    private void ResetCamera(CallbackContext callbackContext) => cameraController.ResetFocusPoint();
+    private void SetCameraHorizontalDirection(CallbackContext callbackContext) => cameraController.SetCameraHorizontalDir(callbackContext.ReadValue<float>());
+    private void ResetCameraHorizontalDirection(CallbackContext callbackContext) => cameraController.SetCameraHorizontalDir(0);
+    private void SetCameraVerticalDirection(CallbackContext callbackContext) => cameraController.SetCameraVerticalDir(callbackContext.ReadValue<float>());
+    private void ResetCameraVerticalDirection(CallbackContext callbackContext) => cameraController.SetCameraVerticalDir(0);
+
+    #endregion
 
     private void InteractPressed(CallbackContext callbackContext)
     {
