@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEngine;
+#if UNITY_EDITOR
 [CustomEditor(typeof(Checkpoint))]
 public class CheckpointIDCreator : Editor
 {
@@ -19,3 +20,4 @@ public class CheckpointIDCreator : Editor
         EditorGUILayout.LabelField("Checkpoint ID", myTarget.CheckpointID.ToString());
     }
 }
+#endif

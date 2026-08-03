@@ -1,3 +1,4 @@
+using Global;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -22,15 +23,16 @@ public class ClimbingController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         gravity = rb.gravityScale;
     }
-    private void Update()
+    private void FixedUpdate()
     {
+        
         if(climCooldownTimer > 0) climCooldownTimer -= Time.deltaTime;
-        if (climbableObject == null || climbDir == 0) return;
-        transform.Translate(Vector3.up * climbDir * climbSpeed * Time.deltaTime);
+        if ((climbableObject == null || climbDir == 0) && !GlobalVariablesLibrary.PlayerGhostMode) return;
+        transform.Translate(Vector3.up * climbDir * climbSpeed * Time.fixedDeltaTime);
     }
     public void TryClimb(float _climbDir)
     {
-        if (climbableObject == null || climCooldownTimer > 0) return;
+        if ((climbableObject == null || climCooldownTimer > 0) && !GlobalVariablesLibrary.PlayerGhostMode) return;
         rb.linearVelocityY = 0;
         rb.linearVelocityX = 0;
         rb.gravityScale = 0;
@@ -43,6 +45,7 @@ public class ClimbingController : MonoBehaviour
             animationController.UpdateAnimationState("StartClimbing");
             animationController.UpdateAnimationState("IsClimbing", true);
             climbing = true;
+            GlobalVariablesLibrary.PlayerIsClimbing = climbing;
         }
         switch (climbDir)
         {
@@ -67,6 +70,7 @@ public class ClimbingController : MonoBehaviour
         animationController.UpdateAnimationState("IsMovingUpOrDown", false);
         animationController.UpdateAnimationState("IsClimbing", false);
         climbing = false;
+        Global.GlobalVariablesLibrary.PlayerIsClimbing = climbing;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

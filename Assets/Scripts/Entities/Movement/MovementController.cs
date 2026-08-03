@@ -56,7 +56,14 @@ public class MovementController : MonoBehaviour
     private void FixedUpdate()
     {
         if (checkForUncrouch && !GlobalFunctionsLibrary.IsGrounded(rigidBody, 1, -1)) ToggleCrouch(false);
-        
+        if (GlobalVariablesLibrary.PlayerGhostMode && rigidBody.simulated)
+        {
+            rigidBody.simulated = false;
+        }
+        else if(!GlobalVariablesLibrary.PlayerGhostMode && !rigidBody.simulated)
+        {
+            rigidBody.simulated = true;
+        }
         float speed = currentWalkSpeed;
         switch (moveState)
         {

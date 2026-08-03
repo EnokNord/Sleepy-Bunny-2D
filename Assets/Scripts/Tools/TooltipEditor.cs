@@ -1,6 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 using static Unity.VisualScripting.Member;
+#if UNITY_EDITOR
 [CustomEditor(typeof(ToolTipController))]
 public class TooltipEditor : Editor
 {
@@ -48,3 +49,4 @@ public class TooltipEditor : Editor
         serializedObject.ApplyModifiedProperties();
     }
 }
+#endif

@@ -45,7 +45,7 @@ public class PlayerHealthComponent : HealthComponent
             }
             
         }
-        if (!inWater && swimTimer != 0 && Global.GlobalFunctionsLibrary.IsGrounded(rb))
+        if (!inWater && swimTimer != 0 && Global.GlobalFunctionsLibrary.IsGrounded(rb) || Global.GlobalVariablesLibrary.PlayerIsClimbing)
         {
              swimming = false;
              swimTimer = 0;
@@ -57,6 +57,7 @@ public class PlayerHealthComponent : HealthComponent
     }
     public override void TriggerDeathEvent()
     {
+        if (Global.GlobalVariablesLibrary.PlayerGodMode) return;
         base.TriggerDeathEvent();
         inputManager.DisableInput();
         StartCoroutine("ResetLevel");

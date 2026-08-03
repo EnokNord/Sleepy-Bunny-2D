@@ -4,26 +4,25 @@ using static Global.GlobalEnumLibrary;
 
 namespace Global
 {
-    // TODO: Make into scriptable object
     public static class GlobalVariablesLibrary
     {
         #region Player
+        public static bool PlayerGhostMode = false;
+        public static bool PlayerGodMode = false;
+        public static int PlayerLayer { get; } = 7;
+        public static int PlayerLayerMask { get; } = 1<<PlayerLayer; // PlayerLayer in bits
 
+        #region Legacy player values
         public const int PlayerMaxVelocityX = 100;
         public const int PlayerMaxVelocityY = 100;
         public static int PlayerMinVelocityX => -PlayerMaxVelocityX;
         public static int PlayerMinVelocityY => -PlayerMaxVelocityY;
-
-        public static int PlayerLayer { get; } = 7;
-        public static int PlayerLayerMask { get; } = 1<<PlayerLayer; // PlayerLayer in bits
-        
-        
         public static MoveState PlayerMoveState { get; set; }
         public static float PlayerMoveDirection { get; set; }
         public static PlayerAnimationsDirectionTypes PlayerAnimationsDirection { get; set; }
         
         public static Rigidbody2D PlayerRigidbody => PlayerController.GetPlayerController.GetRigidbody2D;
-
+        #endregion
         #endregion
 
         #region PushAndPull
@@ -37,6 +36,8 @@ namespace Global
 
         public static int GroundLayer { get; } = 3;
         public static int GroundLayerMask { get; } = 1<<GroundLayer; // GroundLayer in bits
+
+        public static bool PlayerIsClimbing = false;
 
         #endregion
 

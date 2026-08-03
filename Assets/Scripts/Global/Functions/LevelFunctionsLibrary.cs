@@ -8,6 +8,14 @@ namespace LevelFunctionsLibrary
     public class LevelFunctions : MonoBehaviour
     {
         public static UnityEvent<bool> togglePause = new UnityEvent<bool>();
+        public static void ToggleGodMode()
+        {
+            Global.GlobalVariablesLibrary.PlayerGodMode = !Global.GlobalVariablesLibrary.PlayerGodMode;
+        }
+        public static void ToggleGhostMode()
+        {
+            Global.GlobalVariablesLibrary.PlayerGhostMode = !Global.GlobalVariablesLibrary.PlayerGhostMode;
+        }
         public static void ResetCurrentLevel()
         {
             Time.timeScale = 1.0f;

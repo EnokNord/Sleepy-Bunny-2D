@@ -148,6 +148,39 @@
                 },
                 {
                     "name": "1D Axis",
+                    "id": "06a9b5c9-03d7-489f-9ddd-617cf6e734cc",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "93c84d3e-f7dc-4486-b2c3-b331233bf4e5",
+                    "path": "<Touchscreen>/delta/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "e23dfde8-2a45-4a00-9a4a-f59ffd2d78ee",
+                    "path": "<Touchscreen>/delta/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
                     "id": "d0749c89-a4b7-4d56-ba2b-2cbc834aba7f",
                     "path": "1DAxis",
                     "interactions": "",
