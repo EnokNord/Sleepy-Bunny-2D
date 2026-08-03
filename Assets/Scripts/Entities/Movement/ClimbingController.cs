@@ -15,6 +15,7 @@ public class ClimbingController : MonoBehaviour
     bool climbing;
     const float climbCooldown = .5f;
     float climCooldownTimer = 0;
+    bool queuedInteraction = false;
 
     private void Awake()
     {
@@ -25,14 +26,14 @@ public class ClimbingController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        
+        if (queuedInteraction) queuedInteraction = !TryClimb(climbDir);
         if(climCooldownTimer > 0) climCooldownTimer -= Time.deltaTime;
         if ((climbableObject == null || climbDir == 0) && !GlobalVariablesLibrary.PlayerGhostMode) return;
         transform.Translate(Vector3.up * climbDir * climbSpeed * Time.fixedDeltaTime);
     }
-    public void TryClimb(float _climbDir)
+    bool TryClimb(float _climbDir)
     {
-        if ((climbableObject == null || climCooldownTimer > 0) && !GlobalVariablesLibrary.PlayerGhostMode) return;
+        if ((climbableObject == null || climCooldownTimer > 0) && !GlobalVariablesLibrary.PlayerGhostMode) return false;
         rb.linearVelocityY = 0;
         rb.linearVelocityX = 0;
         rb.gravityScale = 0;
@@ -57,7 +58,7 @@ public class ClimbingController : MonoBehaviour
         }
 
         animationController.UpdateAnimationState("IsFalling", false);
-
+        return true;
     }
     public void StopClimbing()
     {
@@ -71,6 +72,12 @@ public class ClimbingController : MonoBehaviour
         animationController.UpdateAnimationState("IsClimbing", false);
         climbing = false;
         Global.GlobalVariablesLibrary.PlayerIsClimbing = climbing;
+    }
+
+    public void ClimbInteraction(float interactValue)
+    {
+        queuedInteraction = true;
+        climbDir = interactValue;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

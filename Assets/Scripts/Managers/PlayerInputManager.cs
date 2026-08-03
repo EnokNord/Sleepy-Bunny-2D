@@ -131,8 +131,8 @@ public class PlayerInputManager : MonoBehaviour
     private void DoJump(CallbackContext callbackContext) => playerMovementController.Jump();
     private void ToggleCrouching(CallbackContext callbackContext) => playerMovementController.ToggleCrouch(true);
     private void StopCrouching(CallbackContext callbackContext) => playerMovementController.ToggleCrouch(false);
-    private void Climb(CallbackContext callbackContext) => climbingController.TryClimb(callbackContext.ReadValue<float>());
-    private void StopMidClimb(CallbackContext callbackContext) => climbingController.TryClimb(0);
+    private void Climb(CallbackContext callbackContext) => climbingController.ClimbInteraction(callbackContext.ReadValue<float>());
+    private void StopMidClimb(CallbackContext callbackContext) => climbingController.ClimbInteraction(0);
     private void StopClimb(CallbackContext callbackContext) => climbingController.StopClimbing();
     #endregion
     #region Camera bindings
