@@ -76,6 +76,7 @@ public class ClimbingController : MonoBehaviour
 
     public void ClimbInteraction(float interactValue)
     {
+        if ((interactValue < 0.2f && interactValue > 0) || (interactValue > -0.2f && interactValue < 0)) return;
         queuedInteraction = true;
         climbDir = interactValue;
     }
