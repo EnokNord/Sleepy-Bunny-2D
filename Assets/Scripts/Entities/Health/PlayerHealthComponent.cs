@@ -6,9 +6,9 @@ public class PlayerHealthComponent : HealthComponent
     [SerializeField] float deathHeight = 30;
     [SerializeField] float impactVelocityThreshold = 40;
     [SerializeField] float swimTimeTilDeath = 10;
+    [SerializeField] Collider2D drownCollider;
 
-
-
+    public Collider2D DrownCollider { get { return drownCollider; } }
     PlayerInputManager inputManager;
     Rigidbody2D rb;
     bool falling;
@@ -25,30 +25,30 @@ public class PlayerHealthComponent : HealthComponent
     }
     private void FixedUpdate()
     {
-        if(!falling && rb.linearVelocityY < 0)
+        if (!falling && rb.linearVelocityY < 0)
         {
             falling = true;
             fallHeight = transform.position.y;
         }
-        if(falling && rb.linearVelocityY >= 0)
+        if (falling && rb.linearVelocityY >= 0)
         {
-            if(fallHeight - transform.position.y >= deathHeight && impactVelocity > impactVelocityThreshold) TriggerDeathEvent();
+            if (fallHeight - transform.position.y >= deathHeight && impactVelocity > impactVelocityThreshold) TriggerDeathEvent();
             falling = false;
             impactVelocity = 0;
         }
         if (swimming)
         {
             swimTimer -= Time.fixedDeltaTime;
-            if(swimTimer <= 0)
+            if (swimTimer <= 0)
             {
                 TriggerDeathEvent();
             }
-            
+
         }
         if (!inWater && swimTimer != 0 && Global.GlobalFunctionsLibrary.IsGrounded(rb) || Global.GlobalVariablesLibrary.PlayerIsClimbing)
         {
-             swimming = false;
-             swimTimer = 0;
+            swimming = false;
+            swimTimer = 0;
         }
     }
     private void Awake()
@@ -72,22 +72,14 @@ public class PlayerHealthComponent : HealthComponent
     {
         impactVelocity = collision.relativeVelocity.y;
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    public void EnterWater()
     {
-        BuoyancyEffector2D buoyancy = collision.GetComponent<BuoyancyEffector2D>();
-        if (buoyancy)
-        {
-            inWater = false;
-        }
+        if (swimTimer == 0) swimTimer = swimTimeTilDeath;
+        swimming = true;
+        inWater = true;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void LeaveWater()
     {
-        BuoyancyEffector2D buoyancy = collision.GetComponent<BuoyancyEffector2D>();
-        if (buoyancy)
-        {
-            if(swimTimer == 0) swimTimer = swimTimeTilDeath;
-            swimming = true;
-            inWater = true;
-        }
+        inWater = false;
     }
 }

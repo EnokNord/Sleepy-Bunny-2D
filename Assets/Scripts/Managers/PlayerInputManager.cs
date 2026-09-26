@@ -43,7 +43,6 @@ public class PlayerInputManager : MonoBehaviour
 
         InputSystem.onActionChange += InputActionChangeCallback;
         SetupInputBindings();
-        Debug.Log("penis");
         LevelFunctionsLibrary.LevelFunctions.togglePause.AddListener(PauseInput);
     }
     private void InputActionChangeCallback(object obj, InputActionChange change)

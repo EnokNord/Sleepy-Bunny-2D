@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3964589940882011420}
   - component: {fileID: 1485345145282504048}
+  - component: {fileID: 227831486315404437}
   - component: {fileID: 2746103421784489033}
   - component: {fileID: 5124880786561357786}
   m_Layer: 8
@@ -39,6 +40,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1485345145282504048
 SpriteRenderer:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -84,6 +86,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.13656995, g: 0.31100637, b: 0.9339623, a: 1}
   m_FlipX: 0
@@ -93,8 +96,20 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
+--- !u!114 &227831486315404437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9022245665483932677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7fa82fa3023ca4e946199d7ca9b49f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaterController
 --- !u!61 &2746103421784489033
 BoxCollider2D:
   m_ObjectHideFlags: 0
