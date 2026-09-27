@@ -52,7 +52,7 @@ MonoBehaviour:
   m_SelectionSources:
     rid: 5038137770589290496
   m_FalloffIntensity: 0.284
-  m_Color: {r: 0.8867924, g: 0.35592335, b: 0.30535775, a: 1}
+  m_Color: {r: 0.8862745, g: 0.35686275, b: 0.30588236, a: 1}
   m_Intensity: 1.94
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
@@ -311,9 +311,9 @@ MonoBehaviour:
   attackCooldown: 3
   speed: 10
   splineAnimator: {fileID: 5885377287595345017}
-  light: {fileID: 3014096262092046990}
-  neutralColor: {r: 0.76761466, g: 0.8207547, b: 0.12001601, a: 0}
-  searchingColor: {r: 0.8862745, g: 0.35686275, b: 0.30588236, a: 0}
+  spotLight: {fileID: 3014096262092046990}
+  neutralColor: {r: 0.6415094, g: 0.59883213, b: 0.105909556, a: 1}
+  searchColor: {r: 0.8862745, g: 0.35686275, b: 0.30588236, a: 1}
 --- !u!61 &3570493461885568061
 BoxCollider2D:
   m_ObjectHideFlags: 0

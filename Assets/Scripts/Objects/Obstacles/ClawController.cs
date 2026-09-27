@@ -1,6 +1,7 @@
 using Events;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.Splines;
 [RequireComponent(typeof(Rigidbody2D))]
 public class ClawController : MonoBehaviour
@@ -12,6 +13,10 @@ public class ClawController : MonoBehaviour
     [SerializeField] float attackCooldown = 3;
     [SerializeField] float speed = 20;
     [SerializeField] SplineAnimate splineAnimator;
+
+    [SerializeField] Light2D spotLight;
+    [SerializeField] Color neutralColor = Color.yellow;
+    [SerializeField] Color searchColor = Color.red;
 
     Transform playerTransform;
     Vector3 currentTravelPoint;
@@ -60,7 +65,11 @@ public class ClawController : MonoBehaviour
                 {
                     detectionTimer += Time.fixedDeltaTime;
                     searching = true;
-                    if(splineAnimator.enabled) splineAnimator.enabled = false;
+                    if (splineAnimator.enabled)
+                    {
+                        spotLight.color = searchColor;
+                        splineAnimator.enabled = false;
+                    }
                     if (detectionTimer >= detectionTime)
                     {
                         rb.simulated = true;
@@ -77,7 +86,11 @@ public class ClawController : MonoBehaviour
             if(detectionTimer < 0)
             {
                 detectionTimer = 0;
-                if(!splineAnimator.enabled) splineAnimator.enabled = true;
+                if (!splineAnimator.enabled)
+                {
+                    spotLight.color = neutralColor;
+                    splineAnimator.enabled = true;
+                }
             }
             
         }
@@ -91,6 +104,7 @@ public class ClawController : MonoBehaviour
             }
             else
             {
+                spotLight.color = neutralColor;
                 splineAnimator.enabled = true;
                 moveBackUp = false;
                 attackCooldownTimer = attackCooldown;
