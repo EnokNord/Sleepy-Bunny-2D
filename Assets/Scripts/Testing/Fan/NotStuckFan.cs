@@ -115,6 +115,8 @@ public class NotStuckFan : MonoBehaviour
 
         if (other.gameObject.name == "sleepy-bunny-character-sheet") return;
 
+        if (PlayerRigidbody.Contains(other.gameObject.GetComponent<Rigidbody2D>())) return;
+
         PlayerRigidbody.Add(other.gameObject.GetComponent<Rigidbody2D>());
     
     }
