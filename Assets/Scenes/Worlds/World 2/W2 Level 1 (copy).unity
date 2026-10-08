@@ -14923,7 +14923,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8602783484055514120, guid: 98bc1600ddc4dc740bf559caf8bc2b43, type: 3}
       propertyPath: paralexEffect
-      value: 0.03
+      value: -0.16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17257,6 +17257,10 @@ PrefabInstance:
       propertyPath: Bottom
       value: 
       objectReference: {fileID: 1013927912}
+    - target: {fileID: 1024809647232780629, guid: 1c85f1dbfb136024a92252fac3367977, type: 3}
+      propertyPath: paralexEffect
+      value: -0.16
+      objectReference: {fileID: 0}
     - target: {fileID: 6207018275129218414, guid: 1c85f1dbfb136024a92252fac3367977, type: 3}
       propertyPath: m_LocalPosition.x
       value: 108.33861
@@ -17377,6 +17381,10 @@ PrefabInstance:
     - target: {fileID: 9030443296768702222, guid: c035659da52f2b74ab25015561a7b655, type: 3}
       propertyPath: Background
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030443296768702222, guid: c035659da52f2b74ab25015561a7b655, type: 3}
+      propertyPath: paralexEffect
+      value: -0.16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17510,7 +17518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7364966475218595205, guid: 43e2a2c23b99cef4f93ce162dc7ebbf4, type: 3}
       propertyPath: paralexEffect
-      value: 0.07
+      value: -0.16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
