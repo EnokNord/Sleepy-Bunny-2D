@@ -11,6 +11,7 @@ public class SimpleParallax : MonoBehaviour
 
     Vector3 startPos;
     float startTargetX;
+    float startTargetY;
     
 
     void Start()
@@ -22,15 +23,17 @@ public class SimpleParallax : MonoBehaviour
 
         startPos = transform.position;
         startTargetX = target.position.x;
+        startTargetY = target.position.y;
     }
 
     void LateUpdate()
     {
         float deltaX = (target.position.x - startTargetX) * parallaxSpeed;
+        float deltaY = (target.position.y - startTargetY) * parallaxSpeed;
 
         transform.position = new Vector3(
             startPos.x + deltaX,
-            startPos.y,
+            startPos.y + deltaY,
             startPos.z
         );
     }

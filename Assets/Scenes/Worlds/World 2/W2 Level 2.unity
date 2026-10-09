@@ -5856,7 +5856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030443296768702222, guid: c035659da52f2b74ab25015561a7b655, type: 3}
       propertyPath: paralexEffect
-      value: 0.07
+      value: -0.07
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6153,7 +6153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030443296768702222, guid: c035659da52f2b74ab25015561a7b655, type: 3}
       propertyPath: paralexEffect
-      value: 0.07
+      value: -0.07
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7081,7 +7081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1223601530722078810, guid: 38a7d98de9c64664b9a60ebd90550080, type: 3}
       propertyPath: m_Intensity
-      value: 0.1
+      value: 0.53
       objectReference: {fileID: 0}
     - target: {fileID: 1539894004992340890, guid: 38a7d98de9c64664b9a60ebd90550080, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7304,7 +7304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030443296768702222, guid: c035659da52f2b74ab25015561a7b655, type: 3}
       propertyPath: paralexEffect
-      value: 0.07
+      value: -0.07
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8470,7 +8470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7364966475218595205, guid: 43e2a2c23b99cef4f93ce162dc7ebbf4, type: 3}
       propertyPath: paralexEffect
-      value: 0.2
+      value: -0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10927,7 +10927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030443296768702222, guid: c035659da52f2b74ab25015561a7b655, type: 3}
       propertyPath: paralexEffect
-      value: 0.07
+      value: -0.07
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11144,6 +11144,10 @@ PrefabInstance:
     - target: {fileID: 4480665124927697342, guid: 43e2a2c23b99cef4f93ce162dc7ebbf4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364966475218595205, guid: 43e2a2c23b99cef4f93ce162dc7ebbf4, type: 3}
+      propertyPath: paralexEffect
+      value: -0.06
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12876,6 +12880,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7364966475218595205, guid: 43e2a2c23b99cef4f93ce162dc7ebbf4, type: 3}
+      propertyPath: paralexEffect
+      value: -0.04
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13952,7 +13960,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7364966475218595205, guid: 43e2a2c23b99cef4f93ce162dc7ebbf4, type: 3}
       propertyPath: paralexEffect
-      value: 0.2
+      value: -0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14190,6 +14198,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2764074887952605059, guid: c186eb9914f9b8243a37df8697092f96, type: 3}
+      propertyPath: m_Intensity
+      value: 0.81
+      objectReference: {fileID: 0}
     - target: {fileID: 6282872703676933594, guid: c186eb9914f9b8243a37df8697092f96, type: 3}
       propertyPath: m_LocalPosition.x
       value: -212.56444
