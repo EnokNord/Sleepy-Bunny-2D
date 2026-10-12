@@ -4,7 +4,7 @@ using UnityEngine;
 public class LevelSelectManager : MonoBehaviour
 {
     [SerializeField] List<GameObject> levelButtons = new List<GameObject>();
-    private void Start()
+    private void OnEnable()
     {
         SavefileManager savefileManager = FindAnyObjectByType<SavefileManager>();
         int levelsProgressed = Mathf.Max(savefileManager.CurrentSave.GetProgression().levelProgressed, 1);

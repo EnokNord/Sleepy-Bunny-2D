@@ -16,6 +16,14 @@ namespace LevelFunctionsLibrary
         {
             Global.GlobalVariablesLibrary.PlayerGhostMode = !Global.GlobalVariablesLibrary.PlayerGhostMode;
         }
+        public void LoadFurthestProgressLevel()
+        {
+            SavefileManager saveManager = FindAnyObjectByType<SavefileManager>();
+            if (saveManager)
+            {
+                SceneManager.LoadScene(saveManager.CurrentSave.GetProgression().levelProgressed);
+            }
+        }
         public static void ResetCurrentLevel()
         {
             Time.timeScale = 1.0f;
