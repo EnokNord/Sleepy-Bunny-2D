@@ -21,7 +21,9 @@ namespace LevelFunctionsLibrary
             SavefileManager saveManager = FindAnyObjectByType<SavefileManager>();
             if (saveManager)
             {
-                SceneManager.LoadScene(saveManager.CurrentSave.GetProgression().levelProgressed);
+                int levelToLoad = 1;
+                if (saveManager.CurrentSave.GetProgression().levelProgressed < SceneManager.sceneCount) levelToLoad = saveManager.CurrentSave.GetProgression().levelProgressed;
+                SceneManager.LoadScene(levelToLoad);
             }
         }
         public static void ResetCurrentLevel()
