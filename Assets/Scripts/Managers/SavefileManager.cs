@@ -19,6 +19,7 @@ public class SavefileManager : MonoBehaviour
         if (level > currentSave.GetProgression().levelProgressed) 
         { 
             currentSave.GetProgression().levelProgressed = level;
+            SaveFileSystem.Save(currentSave);
         }
 
 

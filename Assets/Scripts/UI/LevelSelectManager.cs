@@ -8,9 +8,17 @@ public class LevelSelectManager : MonoBehaviour
     {
         SavefileManager savefileManager = FindAnyObjectByType<SavefileManager>();
         int levelsProgressed = Mathf.Max(savefileManager.CurrentSave.GetProgression().levelProgressed, 1);
-        for (int i = levelsProgressed; i < levelButtons.Count; i++)
+        for (int i = 0; i < levelButtons.Count; i++)
         {
-            levelButtons[i].SetActive(false);
+            if(i < levelsProgressed)
+            {
+                levelButtons[i].SetActive(true);
+            }
+            else
+            {
+                levelButtons[i].SetActive(false);
+            }
+           
         }
     }
 }

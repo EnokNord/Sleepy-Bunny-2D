@@ -22,7 +22,7 @@ namespace LevelFunctionsLibrary
             if (saveManager)
             {
                 int levelToLoad = 1;
-                if (saveManager.CurrentSave.GetProgression().levelProgressed < SceneManager.sceneCount) levelToLoad = saveManager.CurrentSave.GetProgression().levelProgressed;
+                if (saveManager.CurrentSave.GetProgression().levelProgressed < SceneManager.sceneCountInBuildSettings && saveManager.CurrentSave.GetProgression().levelProgressed > 0) levelToLoad = saveManager.CurrentSave.GetProgression().levelProgressed;
                 SceneManager.LoadScene(levelToLoad);
             }
         }
