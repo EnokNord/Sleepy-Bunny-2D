@@ -9,11 +9,8 @@ public class Pickups : MonoBehaviour
     private const int PlayerLayer = 7;
     public bool BigPoints;
 
-    AudioSource Sound;
-
     private void Start()
     {
-        Sound = GetComponent<AudioSource>();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

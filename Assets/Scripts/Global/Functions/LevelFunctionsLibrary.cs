@@ -45,8 +45,16 @@ namespace LevelFunctionsLibrary
         }
         public static void ToggleGamePause(bool paused)
         {
-            if (paused) Time.timeScale = 0;
-            else Time.timeScale = 1;
+            if (paused)
+            {
+                Time.timeScale = 0;
+                AudioListener.pause = true;
+            }
+            else 
+            { 
+                Time.timeScale = 1;
+                AudioListener.pause = false;
+            }
             togglePause.Invoke(paused);
         }
         public static void QuitGame()

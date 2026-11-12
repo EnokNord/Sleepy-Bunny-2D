@@ -32,8 +32,14 @@ public static class SettingsSystem
 [Serializable]
 public class SettingsData
 {
+    [SerializeField] bool muted = false;
     [SerializeField] float masterVolume = 1;
     [SerializeField] float musicVolume = 1;
     [SerializeField] float effectsVolume = 1;
+
+    public float MasterVolume { get { return masterVolume; } set {  masterVolume = Mathf.Clamp(value, 0, 1); } }
+    public float MusicVolume { get { return musicVolume; } set { musicVolume = Mathf.Clamp(value, 0, 1); } }
+    public float EffectsVolume { get { return effectsVolume; } set { effectsVolume = Mathf.Clamp(value, 0, 1); } }
+    public bool Muted { get { return muted; } set { muted = value; } }
   
 }
