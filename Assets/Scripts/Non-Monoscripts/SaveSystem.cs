@@ -1,6 +1,7 @@
 using System.IO;
 using System;
 using UnityEngine;
+using System.Collections.Generic;
 
 public static class SaveFileSystem
 {
@@ -21,10 +22,13 @@ public static class SaveFileSystem
         }
 
     }
+    static void ValidateSaveFile()
+    {
+        //TODO: Check if save file contains all the right values
+    }
     static SaveData CreateSaveFile(string filePath)
     {
-        ProgressionData progressionData = new ProgressionData(0);
-        SaveData saveData = new SaveData(progressionData);
+        SaveData saveData = new SaveData();
         string txt = JsonUtility.ToJson(saveData);
 
         File.WriteAllText(filePath, txt);
@@ -46,22 +50,18 @@ public static class SaveFileSystem
 [Serializable]
 public class SaveData
 {
-    [SerializeField] ProgressionData progressionData;
-    public ProgressionData GetProgression() { return progressionData; }
+    [SerializeField] int levelProgressed;
+    [SerializeField] public int[] levelCheckpoints;
+    // TODO: Find better way to represent which points have been picked up
+    [SerializeField] public int[,] levelPoints;
+    public int LevelProgressed { get { return levelProgressed; } set { levelProgressed = value; } }
 
-    public SaveData(ProgressionData progData)
+    public SaveData(int startLevel = 1)
     {
-        progressionData = progData;
+        levelProgressed = startLevel;
+        levelCheckpoints = new int[30];
+        levelPoints = new int[30, 2];
     }
 }
 
-[Serializable]
-public class ProgressionData
-{
-    [SerializeField] public int levelProgressed;
 
-    public ProgressionData(int levelBeat)
-    {
-        levelProgressed = levelBeat;
-    }
-}

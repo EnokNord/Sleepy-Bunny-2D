@@ -9,12 +9,13 @@ public class CheckpointIDCreator : Editor
         Checkpoint myTarget = (Checkpoint)target;
         if(myTarget.CheckpointID == 0)
         {
-            Checkpoint[] checkpointsInScene = FindObjectsByType<Checkpoint>(FindObjectsSortMode.None);
+            Checkpoint[] checkpointsInScene = FindObjectsByType<Checkpoint>();
             if (checkpointsInScene != null)
             {
                 myTarget.CheckpointID = checkpointsInScene.Length;
                 
             }
+           
         }
         serializedObject.ApplyModifiedProperties();
         EditorGUILayout.LabelField("Checkpoint ID", myTarget.CheckpointID.ToString());

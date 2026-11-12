@@ -7,7 +7,7 @@ public class LevelSelectManager : MonoBehaviour
     private void OnEnable()
     {
         SavefileManager savefileManager = FindAnyObjectByType<SavefileManager>();
-        int levelsProgressed = Mathf.Max(savefileManager.CurrentSave.GetProgression().levelProgressed, 1);
+        int levelsProgressed = Mathf.Max(savefileManager.CurrentSave.LevelProgressed, 1);
         for (int i = 0; i < levelButtons.Count; i++)
         {
             if(i < levelsProgressed)

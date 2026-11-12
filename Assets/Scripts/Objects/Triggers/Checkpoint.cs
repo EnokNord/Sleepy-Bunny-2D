@@ -1,18 +1,24 @@
 using UnityEngine;
+using UnityEngine.Events;
+using static Global.GlobalVariablesLibrary;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class Checkpoint : MonoBehaviour
 {
+    
     public int CheckpointID{ get { return checkpointID; } set { if (checkpointID == 0) checkpointID = value; } }
     [SerializeField] int checkpointID;
-    SpriteRenderer sprite;
+    UnityEvent<int> onCheckpointTriggered;
+    public UnityEvent<int> OnCheckpointTriggered {  get { return onCheckpointTriggered; } }
     private void Awake()
     {
-        sprite = GetComponent<SpriteRenderer>();
+        onCheckpointTriggered = new UnityEvent<int>();
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(sprite) sprite.color = Color.clear;
-        SavefileManager.LevelCheckPointID = CheckpointID;
+        if (collision.gameObject.layer != PlayerLayer) return;
+        onCheckpointTriggered.Invoke(checkpointID);
     }
+    
 }

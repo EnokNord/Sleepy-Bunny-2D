@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static Global.GlobalVariablesLibrary;
 
 
@@ -15,6 +16,12 @@ using static Global.GlobalVariablesLibrary;
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.layer != PlayerLayer) return;
+            SavefileManager savefileManager = FindAnyObjectByType<SavefileManager>();
+        if (savefileManager != null)
+        {
+            savefileManager.CurrentSave.levelCheckpoints[SceneManager.GetActiveScene().buildIndex] = 0;
+            savefileManager.SaveGame();
+        }
             LevelFunctionsLibrary.LevelFunctions.LoadNextLevel();
         }
     }

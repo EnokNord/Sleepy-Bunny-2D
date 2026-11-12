@@ -1,10 +1,10 @@
+using System.Linq;
 using UnityEngine;
 
 public class SavefileManager : MonoBehaviour
 {
     SaveData currentSave;
 
-    public static float LevelCheckPointID;
     int previousLevel = 0;
 
     public SaveData CurrentSave { get { return currentSave; } }
@@ -16,36 +16,41 @@ public class SavefileManager : MonoBehaviour
 #pragma warning disable
     private void OnLevelWasLoaded(int level)
     {
-        if (level > currentSave.GetProgression().levelProgressed) 
-        { 
-            currentSave.GetProgression().levelProgressed = level;
+        if (level > currentSave.LevelProgressed)
+        {
+            currentSave.LevelProgressed = level;
             SaveFileSystem.Save(currentSave);
         }
 
 
         PlayerInputManager[] player = FindObjectsByType<PlayerInputManager>(FindObjectsSortMode.None);
         if (player == null) { return; }
-        Checkpoint[] sceneCheckpoints = FindObjectsByType<Checkpoint>(FindObjectsSortMode.None);
-        if(level == previousLevel && LevelCheckPointID != 0) 
-        { 
-            foreach(Checkpoint checkpoint in sceneCheckpoints)
-            {
-                if(checkpoint.CheckpointID == LevelCheckPointID)
-                {
-                    player[0].transform.position = checkpoint.transform.position;
-                    break;
-                }
-            }
-            //load checkpoint
-            //re collect collectables
-        }
-        else
+        if (level < currentSave.levelCheckpoints.Length && currentSave.levelCheckpoints[level] != 0) 
         {
-            LevelCheckPointID = 0;
+            CheckpointManager checkpointManager = FindAnyObjectByType<CheckpointManager>();
+            if (checkpointManager != null)
+            {
+                foreach (Checkpoint checkpoint in checkpointManager.CheckpointList)
+                {
+                    if (checkpoint.CheckpointID == currentSave.levelCheckpoints[level])
+                    {
+                        player[0].transform.position = checkpoint.transform.position;
+                        //load checkpoint
+                        //re collect collectables
+                        break;
+                    }
+                }
+
+            }
+            
         }
 
 
         previousLevel = level;
+    }
+    public void SaveGame()
+    {
+        SaveFileSystem.Save(currentSave);
     }
 #pragma warning enable
 
